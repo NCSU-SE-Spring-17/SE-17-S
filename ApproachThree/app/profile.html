@@ -19,11 +19,11 @@
             <span class="mdl-layout__title">Team Finder</span>
             <div class="mdl-layout-spacer"></div>
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="#">Profile</a>
+                <a class="mdl-navigation__link" href="profile.html">Profile</a>
                 <a class="mdl-navigation__link" href="#">Approach 1</a>
                 <a class="mdl-navigation__link" href="#">Approach 2</a>
-                <a class="mdl-navigation__link" href="#">Approach 3</a>
-                <button id="btnLogout" class="mdl-navigation__link" href="index.html">Logout</button>
+                <a class="mdl-navigation__link" href="approach3.html">Approach 3</a>
+                <a class="mdl-navigation__link" href="index.html" onclick="logout()">Logout</a>
             </nav>
         </div>
     </header>
@@ -35,72 +35,85 @@
                 <div id = "basic" class = "loginContainer">
                     <form action="#">
                         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                            <input id="txtEmail" class="mdl-textfield__input" type="email" readonly>
-                            <label class="mdl-textfield__label">Email...</label>
+                            <input id="showEmail" class="mdl-textfield__input" type="email" readonly>
+                            <!--<label class="mdl-textfield__label">Email...</label>-->
                         </div>
 
                         <form action="#">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input id="txtPassword" class="mdl-textfield__input" type="password">
-                                <label class="mdl-textfield__label">Password...</label>
+                                <input id="changePassword" class="mdl-textfield__input" type="password">
+                                <label class="mdl-textfield__label">Change password...</label>
                             </div>
                         </form>
 
 
                         <form action="#">
                             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input id="txtname" class="mdl-textfield__input" type="text">
+                                <input id="changeName" class="mdl-textfield__input" type="text">
                                 <label class="mdl-textfield__label">Name...</label>
                             </div>
                         </form>
                     </form>
-
                 </div>
             </td>
             <td>
                 <div id = 'skill' class = "loginContainer">
                     <ul class="demo-list-control mdl-list">
                         <li class="mdl-list__item">
-                            <span class="mdl-list__item-primary-content">
-                                Front-End
-                            </span>
+                                <span class="mdl-list__item-primary-content">
+                                    Front-End
+                                </span>
                             <span class="mdl-list__item-secondary-action">
-                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="front-end">
-                                    <input type="checkbox" id="front-end" class="mdl-checkbox__input"/>
-                                </label>
-                            </span>
+                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="frontEnd">
+                                        <input type="checkbox" id="frontEnd" class="mdl-checkbox__input"/>
+                                    </label>
+                                </span>
                         </li>
                     </ul>
                     <ul class="demo-list-control mdl-list">
                         <li class="mdl-list__item">
-                            <span class="mdl-list__item-primary-content">
-                                Back-End
-                            </span>
+                                <span class="mdl-list__item-primary-content">
+                                    Back-End
+                                </span>
                             <span class="mdl-list__item-secondary-action">
-                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="back-end">
-                                    <input type="checkbox" id="back-end" class="mdl-checkbox__input"/>
-                                </label>
-                            </span>
+                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="backEnd">
+                                        <input type="checkbox" id="backEnd" class="mdl-checkbox__input"/>
+                                    </label>
+                                </span>
                         </li>
                     </ul>
                     <ul class="demo-list-control mdl-list">
                         <li class="mdl-list__item">
-                            <span class="mdl-list__item-primary-content">
-                                Database
-                            </span>
+                                <span class="mdl-list__item-primary-content">
+                                    Database
+                                </span>
                             <span class="mdl-list__item-secondary-action">
-                                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="database">
-                                    <input type="checkbox" id="database" class="mdl-checkbox__input"/>
-                                </label>
-                            </span>
+                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="database">
+                                        <input type="checkbox" id="database" class="mdl-checkbox__input"/>
+                                    </label>
+                                </span>
                         </li>
                     </ul>
                 </div>
             </td>
         </tr>
+        <tr>
+            <td>
+                <div id ='team' class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <label class="mdl-textfield__input>team assignment">Team Assignment</label>
+                    <a id="teamInfo"class="mdl-navigation__link" href="#">team1</a>
+                </div>
+            </td>
+            <td>
+                <div class="loginContainer">
+                    <button id="submitPro" class="mdl-navigation__link" onclick="submitClick()"> Submit Change </button>
+                </div>
+            </td>
 
+        </tr>
 
     </table>
+    <label id="test1">test</label>
 
 </div>
 
@@ -118,11 +131,11 @@
 <script>
     // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyDLpM28KDFcp2LnEs2q1JC6_MU2nTni3Dc",
-        authDomain: "test-1ab03.firebaseapp.com",
-        databaseURL: "https://test-1ab03.firebaseio.com",
-        storageBucket: "test-1ab03.appspot.com",
-        messagingSenderId: "542459299256"
+        apiKey: "AIzaSyCV7VeTShkYf5ZXA6n03fMwmQTTJ06ZtBY",
+        authDomain: "findteammate-72e0a.firebaseapp.com",
+        databaseURL: "https://findteammate-72e0a.firebaseio.com",
+        storageBucket: "findteammate-72e0a.appspot.com",
+        messagingSenderId: "491181281956"
     };
     firebase.initializeApp(config);
 </script>
@@ -130,6 +143,7 @@
 <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 
 <script src="profile.js"></script>
+<script src="app.js"></script>
 </body>
 
 

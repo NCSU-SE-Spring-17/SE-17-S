@@ -19,13 +19,6 @@
         <div class="mdl-layout__header-row">
             <span class="mdl-layout__title">Team Finder</span>
             <div class="mdl-layout-spacer"></div>
-            <nav class="mdl-navigation" id="approach">
-                <button id="btnProf" class="mdl-navigation__link" id="profView" onclick="showProfile()">profile</button>
-                <a class="mdl-navigation__link" id="app1">Approach 1</a>
-                <a class="mdl-navigation__link" id="app2">Approach 2</a>
-                <button id="btnapp3" class="mdl-navigation__link" id="app3" onclick="showApproach3()">Approach 3</button>
-                <button id="btnLogout" class="mdl-navigation__link" href="#">Logout</button>
-            </nav>
         </div>
     </header>
     <p></p>
@@ -62,125 +55,7 @@
             </div>
         </tr>
     </table></div>
-
-    <!--methods panel-->
-        <!--profile panel-->
-        <table id="pro" class = "loginContainer">
-            <tr>
-                <td>
-                    <div id = "basic" class = "loginContainer">
-                        <form action="#">
-                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                <input id="showEmail" class="mdl-textfield__input" type="email" readonly>
-                                <!--<label class="mdl-textfield__label">Email...</label>-->
-                            </div>
-
-                            <form action="#">
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input id="changePassword" class="mdl-textfield__input" type="password">
-                                    <label class="mdl-textfield__label">Change password...</label>
-                                </div>
-                            </form>
-
-
-                            <form action="#">
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input id="changeName" class="mdl-textfield__input" type="text">
-                                    <label class="mdl-textfield__label">Name...</label>
-                                </div>
-                            </form>
-                        </form>
-                    </div>
-                </td>
-                <td>
-                    <div id = 'skill' class = "loginContainer">
-                        <ul class="demo-list-control mdl-list">
-                            <li class="mdl-list__item">
-                                <span class="mdl-list__item-primary-content">
-                                    Front-End
-                                </span>
-                                <span class="mdl-list__item-secondary-action">
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="frontEnd">
-                                        <input type="checkbox" id="frontEnd" class="mdl-checkbox__input"/>
-                                    </label>
-                                </span>
-                            </li>
-                        </ul>
-                        <ul class="demo-list-control mdl-list">
-                            <li class="mdl-list__item">
-                                <span class="mdl-list__item-primary-content">
-                                    Back-End
-                                </span>
-                                <span class="mdl-list__item-secondary-action">
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="backEnd">
-                                        <input type="checkbox" id="backEnd" class="mdl-checkbox__input"/>
-                                    </label>
-                                </span>
-                            </li>
-                        </ul>
-                        <ul class="demo-list-control mdl-list">
-                            <li class="mdl-list__item">
-                                <span class="mdl-list__item-primary-content">
-                                    Database
-                                </span>
-                                <span class="mdl-list__item-secondary-action">
-                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="database">
-                                        <input type="checkbox" id="database" class="mdl-checkbox__input"/>
-                                    </label>
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <div id ='team' class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        <label class="mdl-textfield__input>team assignment">Team Assignment</label>
-                        <a id="teamInfo"class="mdl-navigation__link" href="#">team1</a>
-                    </div>
-                </td>
-                <td>
-                    <div class="loginContainer">
-                        <button id="submitPro" class="mdl-navigation__link" onclick="submitClick()"> Submit Change </button>
-                    </div>
-                </td>
-
-            </tr>
-
-        </table>
-
-        <!--approach3 panel-->
-        <div id="approach3" class="loginContainer">
-            <table id="app3Teams"  class="mdl-data-table mdl-js-data-table">
-                <thead>
-                <tr>
-                    <th class="mdl-data-table__cell--non-numeric">Material</th>
-                    <th>Quantity</th>
-                    <th>Unit price</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
-                    <td>25</td>
-                    <td>$2.90</td>
-                </tr>
-                <tr>
-                    <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
-                    <td>50</td>
-                    <td>$1.25</td>
-                </tr>
-                <tr>
-                    <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
-                    <td>10</td>
-                    <td>$2.35</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <label id="test1"></label>
+    <label id="test1">test</label>
 </div>
 
   <!-- In production use:

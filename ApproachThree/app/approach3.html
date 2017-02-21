@@ -19,16 +19,21 @@
             <span class="mdl-layout__title">Team Finder</span>
             <div class="mdl-layout-spacer"></div>
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="index.html">Profile</a>
+                <a class="mdl-navigation__link" href="profile.html">Profile</a>
                 <a class="mdl-navigation__link" href="#">Approach 1</a>
                 <a class="mdl-navigation__link" href="#">Approach 2</a>
                 <a class="mdl-navigation__link" href="approach3.html">Approach 3</a>
-                <button id="btnLogout" class="mdl-navigation__link" href="index.html">Logout</button>
+                <a class="mdl-navigation__link" href="index.html" onclick="logout()">Logout</a>
             </nav>
         </div>
     </header>
     <p></p>
     <p></p>
+    <div id="approach3" class="loginContainer">
+        <table id="app3Teams"  class="mdl-data-table mdl-js-data-table">
+        </table>
+    </div>
+    <label id="test1">test</label>
 
 </div>
 
@@ -46,17 +51,16 @@
 <script>
     // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyDLpM28KDFcp2LnEs2q1JC6_MU2nTni3Dc",
-        authDomain: "test-1ab03.firebaseapp.com",
-        databaseURL: "https://test-1ab03.firebaseio.com",
-        storageBucket: "test-1ab03.appspot.com",
-        messagingSenderId: "542459299256"
+        apiKey: "AIzaSyCV7VeTShkYf5ZXA6n03fMwmQTTJ06ZtBY",
+        authDomain: "findteammate-72e0a.firebaseapp.com",
+        databaseURL: "https://findteammate-72e0a.firebaseio.com",
+        storageBucket: "findteammate-72e0a.appspot.com",
+        messagingSenderId: "491181281956"
     };
     firebase.initializeApp(config);
 </script>
 
 <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-
 <script src="approach3.js"></script>
 </body>
 
