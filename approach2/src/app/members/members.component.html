@@ -6,8 +6,24 @@
     <div id="page" [@moveInLeft]="state">
       <h2>Hey {{ name.auth.displayName }}!</h2>
 
-      <img src="assets/images/filler.png" />
+      <h2>User Table</h2>
 
+      <table>
+        <tr>
+          <th>Student Name</th>
+          <th>Email</th>
+          <th>Backend</th>
+          <th>Frontend</th>
+          <th>Database</th>
+        </tr>
+        <tr *ngFor="let user of users | async">
+          <td>{{user.name}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.skills.backend}}</td>
+          <td>{{user.skills.frontend}}</td>
+          <td>{{user.skills.database}}</td>
+        </tr>
+      </table>
       
     </div>
     

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+import { AngularFire, AuthProviders, AuthMethods, FirebaseListObservable } from 'angularfire2';
 import { Router } from '@angular/router';
 import { moveIn, fallIn, moveInLeft } from '../router.animations';
 
@@ -15,6 +15,8 @@ export class MembersComponent implements OnInit {
   name: any;
   state: string = '';
 
+  users: FirebaseListObservable<any[]>;
+
   constructor(public af: AngularFire,private router: Router) {
 
     this.af.auth.subscribe(auth => {
@@ -22,6 +24,8 @@ export class MembersComponent implements OnInit {
         this.name = auth;
       }
     });
+
+    this.users = af.database.list('/users');
 
   }
 
