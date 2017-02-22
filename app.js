@@ -68,11 +68,20 @@ TeamApp.controller('AuthCtrl' ,['$rootScope','$scope', '$window','Auth','$locati
             $scope.authChanged();
 
         }, function (error) {
-
-
                 console.log("Error Occured" + error.message);
             });
     };
+
+    $scope.logout = function () {
+        console.log("In Log Out Method");
+        Auth.$signOut().then(function (auth) {
+            console.log("Logged out successfully");
+
+        }, function(error) {
+            console.log("Error Occured" + error.message);
+        });
+    };
+
 
     $scope.createUser = function () {
 
