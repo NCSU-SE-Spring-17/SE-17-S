@@ -1,10 +1,10 @@
 <div class="form-container" id="toolbar">
     <header [@fallIn]="state">
       <button (click)="logout()" class="basic-btn">Logout</button>
-      <button (click)="generateTeams()" class="basic-btn">Generate Teams</button>
+      <button (click)="back()" class="basic-btn">Back</button>
     </header>
     <div id="page" [@moveInLeft]="state">
-      <h2>Hey {{ name.auth.displayName }}!</h2>
+      <h2>Assembled Teams</h2>
 
       <img src="assets/images/filler.png" />
 

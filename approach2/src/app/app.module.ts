@@ -13,6 +13,7 @@ import { SignupComponent } from './signup/signup.component';
 import { MembersComponent } from './members/members.component';
 import { AuthService } from './auth.service';
 import { routes } from './app.routes';
+import { TeamsComponent } from './teams/teams.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { routes } from './app.routes';
     LoginComponent,
     EmailComponent,
     SignupComponent,
-    MembersComponent
+    MembersComponent,
+    TeamsComponent
   ],
   imports: [
     BrowserModule,

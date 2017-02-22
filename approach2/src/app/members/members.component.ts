@@ -31,6 +31,9 @@ export class MembersComponent implements OnInit {
      this.router.navigateByUrl('/login');
   }
 
+  generateTeams() {
+    this.router.navigateByUrl('/teams');
+ }
 
   ngOnInit() {
   }
