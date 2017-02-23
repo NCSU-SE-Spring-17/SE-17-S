@@ -36,6 +36,10 @@ export class MembersComponent implements OnInit {
   }
 
   generateTeams() {
+
+    //create team functionality will go here.
+
+
     this.router.navigateByUrl('/teams');
  }
 
