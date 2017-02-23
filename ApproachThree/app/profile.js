@@ -36,21 +36,25 @@ function submitClick(){
 
 firebase.auth().onAuthStateChanged(function(user){
     if(user){
-        $("input[type='checkbox']").prop("checked",true);
         //signed in
 
 
         //get profile and skill info from database
         var userId = firebase.auth().currentUser.uid;
-        var currentUser = firebase.database().ref().child('user').orderByChild(userId);
+        var currentUser = firebase.database().ref().child('user').child(userId);
 
-        currentUser.on("child_added", function(snapshot){
+        currentUser.on("value", function(snapshot){
             $("#showEmail").val(snapshot.child("email").val());
             $("#changeName").val(snapshot.child("name").val());
+            if(snapshot.child("team").val() == "no"){
+                $("#teamInfo").text("No team");
+            }
+            else{
+                $("#teamInfo").text(snapshot.child("team").val());
+            }
         });
 
         var skills = firebase.database().ref().child('user').child(userId).child("skill");
-        $("#test1").val(userId);
         skills.on("value", function(snapshot){
             if(snapshot.child("frontEnd").val() == 1){
                 $("#frontEnd").prop("checked",true);

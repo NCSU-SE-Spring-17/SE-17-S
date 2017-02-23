@@ -54,11 +54,11 @@ $("#btnSignUp").click(
                     email: email,
                     name: "",
                     skill: skills,
-                    team: 0
+                    team: "no"
                 };
                 //init end------------------------------------------------------
                 firebaseRef.child('user').child(userId).set(postData);
-
+                window.location='profile.html';
                 //firebase.auth().signInWithEmailAndPassword(email,password);
             }, function (error) {
                 $("#showError").show();

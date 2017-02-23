@@ -20,8 +20,6 @@
             <div class="mdl-layout-spacer"></div>
             <nav class="mdl-navigation">
                 <a class="mdl-navigation__link" href="profile.html">Profile</a>
-                <a class="mdl-navigation__link" href="#">Approach 1</a>
-                <a class="mdl-navigation__link" href="#">Approach 2</a>
                 <a class="mdl-navigation__link" href="approach3.html">Approach 3</a>
                 <a class="mdl-navigation__link" href="index.html" onclick="logout()">Logout</a>
             </nav>
@@ -31,9 +29,38 @@
     <p></p>
     <div id="approach3" class="loginContainer">
         <table id="app3Teams"  class="mdl-data-table mdl-js-data-table">
+            <!---
+                <thead>
+                <tr>
+                    <th class="mdl-data-table__cell--non-numeric">Material</th>
+                    <th>Quantity</th>
+                    <th>Unit price</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric">Acrylic (Transparent)</td>
+                    <td>25</td>
+                    <td>$2.90</td>
+                </tr>
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric">Plywood (Birch)</td>
+                    <td>50</td>
+                    <td>$1.25</td>
+                </tr>
+                <tr>
+                    <td class="mdl-data-table__cell--non-numeric">Laminate (Gold on Blue)</td>
+                    <td>10</td>
+                    <td>$2.35</td>
+                </tr>
+                </tbody>
+            -->
         </table>
     </div>
-    <label id="test1">test</label>
+    <p></p>
+    <div class="loginContainer">
+    <label id="test1" >test</label>
+    </div>
 
 </div>
 
@@ -48,14 +75,16 @@
 <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-messaging.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
 <script>
     // Initialize Firebase
     var config = {
-        apiKey: "AIzaSyCV7VeTShkYf5ZXA6n03fMwmQTTJ06ZtBY",
-        authDomain: "findteammate-72e0a.firebaseapp.com",
-        databaseURL: "https://findteammate-72e0a.firebaseio.com",
-        storageBucket: "findteammate-72e0a.appspot.com",
-        messagingSenderId: "491181281956"
+        apiKey: "AIzaSyDLpM28KDFcp2LnEs2q1JC6_MU2nTni3Dc",
+        authDomain: "test-1ab03.firebaseapp.com",
+        databaseURL: "https://test-1ab03.firebaseio.com",
+        storageBucket: "test-1ab03.appspot.com",
+        messagingSenderId: "542459299256"
     };
     firebase.initializeApp(config);
 </script>
