@@ -2,9 +2,7 @@
 
 This project is an web application providing one solution to build teams. 
 
-It's a single page web app. The app control the panel to show or hide different functions.(To make authentication simple...)
-
-The app has functions of user authentication and updating profile up to now.
+The app has functions of user authentication and updating profile.
 
 
 # Dependency
