@@ -6,7 +6,14 @@
     <div id="page" [@moveInLeft]="state">
       <h2>Assembled Teams</h2>
 
-      <img src="assets/images/filler.png" />
+      <table *ngFor="let team of teams | async">
+        <tr>
+          <th>{{team.name}}</th>
+        </tr>
+        <tr *ngFor="let member of team.members">
+          <td>{{member}}</td>
+        </tr>
+      </table>
 
       
     </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+import { AngularFire, AuthProviders, AuthMethods, FirebaseListObservable } from 'angularfire2';
 import { Router } from '@angular/router';
 import { moveIn, fallIn, moveInLeft } from '../router.animations';
 
@@ -12,7 +12,12 @@ import { moveIn, fallIn, moveInLeft } from '../router.animations';
 })
 export class TeamsComponent implements OnInit {
 
-  constructor(public af: AngularFire,private router: Router) { }
+  teams: FirebaseListObservable<any[]>;
+
+  constructor(public af: AngularFire,private router: Router) {
+    this.teams = af.database.list('/teams');
+
+   }
 
   back() {
     this.router.navigateByUrl('/members');
