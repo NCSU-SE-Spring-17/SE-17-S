@@ -19,9 +19,9 @@
         <tr *ngFor="let user of users | async">
           <td>{{user.name}}</td>
           <td>{{user.email}}</td>
-          <td>{{user.skills.backend}}</td>
-          <td>{{user.skills.frontend}}</td>
-          <td>{{user.skills.database}}</td>
+          <td>{{user.skills?.backend}}</td>
+          <td>{{user.skills?.frontend}}</td>
+          <td>{{user.skills?.database}}</td>
         </tr>
       </table>
       

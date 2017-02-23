@@ -18,6 +18,12 @@ export class TeamsComponent implements OnInit {
     this.router.navigateByUrl('/members');
   }
 
+  logout() {
+     this.af.auth.logout();
+     console.log('logged out');
+     this.router.navigateByUrl('/login');
+  }
+
   ngOnInit() {
   }
 
