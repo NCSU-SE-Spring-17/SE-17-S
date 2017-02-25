@@ -36,3 +36,26 @@
 .demo-list-radio {
   display: inline;
 }
+.td {
+  margin:0px auto;
+  width:58px; /* 必须制定宽度 */
+  align:"center";
+  align-items: center;
+  text-align: center;
+}
+.td2 {
+  margin:0px auto;
+  width:100px; /* 必须制定宽度 */
+  align:"center";
+  align-items: center;
+  text-align: left;
+}
+.table{
+  width: 100%;
+  table-layout: fixed;
+  float: left;
+  overflow: auto;
+}
+.ocupy{
+  color: darkgray;
+}

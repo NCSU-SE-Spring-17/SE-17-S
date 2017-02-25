@@ -21,7 +21,16 @@ $("#btnLogin").click(
         var password = $("#txtPassword").val();
         if(email != "" && password != ""){
             firebase.auth().signInWithEmailAndPassword(email,password).then(function(){
-                window.location = 'profile.html';
+                var firebaseRef = firebase.database().ref();
+                var user=firebase.auth().currentUser;
+
+                firebaseRef.child('user').child(user.uid).on('value',function(snapshot) {
+                    if(snapshot.child('team').val()=='admin'){
+                        window.location = 'config.html';
+                    }
+                    else
+                        window.location = 'profile.html';
+                });
             },function(error){
                 $("#showError").show();
                 document.getElementById('showError').innerHTML= error.message;

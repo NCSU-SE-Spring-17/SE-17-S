@@ -34,9 +34,9 @@ function initTable(firebaseRef){
     var teamConfig = firebaseRef.child('config');
 
     teamTable.append("<thead><tr>");
-    teamTable.append("<th> ID </th> <th> Name </th>");
+    teamTable.append("<th><div class='td'>ID</div></th>");
     teamConfig.child('positions').on('child_added', function(snapshot){
-        teamTable.append("<th>"+ snapshot.val()+"</th>");
+        teamTable.append("<th><div class='td'>"+ snapshot.val()+"</div></th>");
     });
 
     //create team table
@@ -53,24 +53,22 @@ function showTable(firebaseRef) {
             1:snap.child('skill').child('frontEnd').val(),
             2:snap.child('skill').child('backEnd').val(),
             3:snap.child('skill').child('database').val()
-        }
+        };
         var u={
-            name:snap.val().name,
             team:snap.val().team,
             skills:skill
-        }
+        };
         return u;
     }).then(function (u) {
         //alert(u.skills.backEnd);
         teamConfig.on("child_added", function (snapshot) {
             if (snapshot.key != "testteam") {
                 teamTable.append("<tr>");
-                teamTable.append("<th>" + snapshot.key + "</th>");
-                teamTable.append("<th>" + snapshot.child('name').val() + "</th>");
-                for (var i = 1; i <= snapshot.numChildren() - 1; i++) {
+                teamTable.append("<td>" + snapshot.key + "</td>");
+                for (var i = 1; i <= snapshot.numChildren(); i++) {
                     if (snapshot.child(i).val() == "no") {
                         var btnid = "btn-"+snapshot.key + "-" + i;
-                        teamTable.append('<th> <button id="'+btnid + '" class="mdl-button mdl-js-button" onclick="applyTeam(this.id)"> Apply </button> </th>');
+                        teamTable.append('<td> <button id="'+btnid + '" class="mdl-button mdl-js-button" onclick="applyTeam(this.id)"> Join </button> </td>');
 
                         if(u.team != "no" ){
                             document.getElementById(btnid).disabled=true;
@@ -84,11 +82,11 @@ function showTable(firebaseRef) {
                         }
                     }
                     else {
-                        if(snapshot.key == u.team){
-                            teamTable.append('<th bgcolor="#f0f8ff"> <button id="btnc-' + snapshot.key + '-' + i + '" class="mdl-button mdl-js-button" onclick="cancelTeam(this.id)"> CANCEL </button> </th>');
+                        if(snapshot.key == u.team && snapshot.child(i).val() == user.uid){
+                            teamTable.append('<td bgcolor="#f0f8ff"> <button id="btnc-' + snapshot.key + '-' + i + '" class="mdl-button mdl-js-button" onclick="cancelTeam(this.id)"> CANCEL </button> </td>');
                         }
                         else{
-                            teamTable.append("<th>OCUPIED</th>");
+                            teamTable.append("<td class='ocupy'>OCUPIED</td>");
                         }
 
                     }

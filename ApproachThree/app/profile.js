@@ -48,6 +48,7 @@ firebase.auth().onAuthStateChanged(function(user){
             $("#changeName").val(snapshot.child("name").val());
             if(snapshot.child("team").val() == "no"){
                 $("#teamInfo").text("No team");
+                document.getElementById("teamInfo").href = "#";
             }
             else{
                 $("#teamInfo").text(snapshot.child("team").val());
