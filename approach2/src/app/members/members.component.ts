@@ -10,6 +10,7 @@ import { moveIn, fallIn, moveInLeft } from '../router.animations';
   animations: [moveIn(), fallIn(), moveInLeft()],
   host: {'[@moveIn]': ''}
 })
+
 export class MembersComponent implements OnInit {
 
   name: any;

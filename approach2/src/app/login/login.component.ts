@@ -1,7 +1,8 @@
-import { Component, OnInit, HostBinding } from '@angular/core';
-import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
-import { Router } from '@angular/router';
-import { moveIn } from '../router.animations';
+import {Component, OnInit, HostBinding} from '@angular/core';
+import {AngularFire, AuthProviders, AuthMethods, FirebaseObjectObservable} from 'angularfire2';
+import {Router} from '@angular/router';
+import {moveIn} from '../router.animations';
+import auth = firebase.auth;
 
 @Component({
   selector: 'app-login',
@@ -13,14 +14,16 @@ import { moveIn } from '../router.animations';
 export class LoginComponent implements OnInit {
 
   error: any;
+  user: FirebaseObjectObservable<any[]>;
+
+
   constructor(public af: AngularFire, private router: Router) {
     this.af.auth.subscribe(auth => {
       //if already logged in redirect to members
-      if(auth) {
+      if (auth) {
         this.router.navigateByUrl('/members');
       }
     });
-
   }
 
   loginGoogle() {
@@ -28,10 +31,19 @@ export class LoginComponent implements OnInit {
       provider: AuthProviders.Google,
       method: AuthMethods.Popup,
     }).then(
-        (success) => {
-        this.router.navigate(['/members']);
+      (success) => {
+        var userID = success.uid;
+        var userData = this.af.database.object('/users/'+userID, {preserveSnapshot: true})
+        userData.subscribe(data => {
+          if (data.val()) {
+            this.router.navigateByUrl('/members');
+          } else {
+            this.router.navigateByUrl('/profile');
+          }
+        });
       }).catch(
-        (err) => {
+      (err) => {
+        console.log(err);
         this.error = err;
       })
   }
