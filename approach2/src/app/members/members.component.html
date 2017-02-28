@@ -1,31 +1,31 @@
 <div class="form-container" id="toolbar">
-    <header [@fallIn]="state">
-      <button (click)="logout()" class="basic-btn">Logout</button>
-      <button (click)="generateTeams()" class="basic-btn">Generate Teams</button>
-      <button routerLink="/profile" class="basic-btn">Edit Profile</button>
-    </header>
-    <div id="page" [@moveInLeft]="state">
-      <h2>Hey {{ name.auth.displayName }}!</h2>
+  <header [@fallIn]="state">
+    <button (click)="logout()" class="basic-btn">Logout</button>
+    <button (click)="generateTeams()" class="basic-btn">Generate Teams</button>
+    <button routerLink="/profile" class="basic-btn">Edit Profile</button>
+  </header>
+  <div id="page" [@moveInLeft]="state">
+    <h2>Hey {{ name.auth.displayName }}!</h2>
 
-      <h2>User Table</h2>
+    <h2>User Table</h2>
 
-      <table>
-        <tr>
-          <th>Student Name</th>
-          <th>Email</th>
-          <th>Backend</th>
-          <th>Frontend</th>
-          <th>Database</th>
-        </tr>
-        <tr *ngFor="let user of users | async">
-          <td>{{user.name}}</td>
-          <td>{{user.email}}</td>
-          <td>{{user.skills?.backend}}</td>
-          <td>{{user.skills?.frontend}}</td>
-          <td>{{user.skills?.database}}</td>
-        </tr>
-      </table>
+    <table>
+      <tr>
+        <th>Student Name</th>
+        <th>Email</th>
+        <th>Backend</th>
+        <th>Frontend</th>
+        <th>Database</th>
+      </tr>
+      <tr *ngFor="let user of users | async">
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.skills?.backend ? 'true' : 'false'}}</td>
+        <td>{{user.skills?.frontend ? 'true' : 'false'}}</td>
+        <td>{{user.skills?.database ? 'true' : 'false'}}</td>
+      </tr>
+    </table>
 
-    </div>
+  </div>
 
 </div>
