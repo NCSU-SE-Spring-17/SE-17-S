@@ -4,7 +4,7 @@
   <h2>Join now</h2>
 
   <span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>
-    
+
   <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
 
     <input type="text" placeholder="Display name..." (ngModel)="name" name="name" class="txt" required>

@@ -1,0 +1,21 @@
+<div class="form-container" id="toolbar">
+  <header [@fallIn]="state">
+    <button routerLink="/members" class="basic-btn">Go Back</button>
+  </header>
+
+  <div id="page" [@moveInLeft]="state">
+
+    <h2>Add your skills</h2>
+
+    <span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>
+
+    <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+
+      <label><input type="checkbox" (ngModel)="backend" name="backend">Backend</label>
+      <label><input type="checkbox" (ngModel)="frontend" name="frontend">Frontend</label>
+      <label><input type="checkbox" (ngModel)="database" name="database">Database</label>
+
+      <button type="submit" [disabled]="!formData.valid" class="basic-btn">Add skills</button>
+    </form>
+  </div>
+</div>

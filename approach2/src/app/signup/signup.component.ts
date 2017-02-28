@@ -27,28 +27,28 @@ export class SignupComponent implements OnInit {
         password: formData.value.password
       }).then(
         (success) => {
-        console.log(success);
-        this.af.auth.subscribe(auth => {
-          if(auth) {
-            var userID = auth.uid;
-            this.user = this.af.database.object('/users/' + userID);
-            this.user.set({
-              name: formData.value.name,
-              email: formData.value.email, 
-              skills: {
-                backend: formData.value.backend,
-                frontend: formData.value.frontend,
-                database: formData.value.database
-              }
-            });
-          }
-        });
-        this.router.navigate(['/members'])
-      }).catch(
+          console.log(success);
+          this.af.auth.subscribe(auth => {
+            if(auth) {
+              var userID = auth.uid;
+              this.user = this.af.database.object('/users/' + userID);
+              this.user.set({
+                name: formData.value.name,
+                email: formData.value.email,
+                skills: {
+                  backend: formData.value.backend,
+                  frontend: formData.value.frontend,
+                  database: formData.value.database
+                }
+              });
+            }
+          });
+          this.router.navigate(['/members'])
+        }).catch(
         (err) => {
-        console.log(err);
-        this.error = err;
-      })
+          console.log(err);
+          this.error = err;
+        })
     }
   }
 

@@ -2,6 +2,7 @@
     <header [@fallIn]="state">
       <button (click)="logout()" class="basic-btn">Logout</button>
       <button (click)="generateTeams()" class="basic-btn">Generate Teams</button>
+      <button routerLink="/profile" class="basic-btn">Edit Profile</button>
     </header>
     <div id="page" [@moveInLeft]="state">
       <h2>Hey {{ name.auth.displayName }}!</h2>
@@ -24,7 +25,7 @@
           <td>{{user.skills?.database}}</td>
         </tr>
       </table>
-      
+
     </div>
-    
+
 </div>
