@@ -8,6 +8,7 @@ import { AuthService } from './auth.service';
 import { SignupComponent } from './signup/signup.component';
 import { EmailComponent } from './email/email.component';
 import { TeamsComponent } from './teams/teams.component';
+import { ProfileComponent } from './profile/profile.component';
 
 export const router: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -15,7 +16,8 @@ export const router: Routes = [
     { path: 'signup', component: SignupComponent },
     { path: 'login-email', component: EmailComponent },
     { path: 'members', component: MembersComponent, canActivate: [AuthService] },
-    { path: 'teams', component: TeamsComponent, canActivate: [AuthService] }
+    { path: 'teams', component: TeamsComponent, canActivate: [AuthService] },
+    { path: 'profile', component: ProfileComponent}
 
 ]
 

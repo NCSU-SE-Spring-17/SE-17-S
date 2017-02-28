@@ -14,6 +14,7 @@ import { MembersComponent } from './members/members.component';
 import { AuthService } from './auth.service';
 import { routes } from './app.routes';
 import { TeamsComponent } from './teams/teams.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TeamsComponent } from './teams/teams.component';
     EmailComponent,
     SignupComponent,
     MembersComponent,
-    TeamsComponent
+    TeamsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
