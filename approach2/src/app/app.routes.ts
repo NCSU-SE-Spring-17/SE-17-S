@@ -17,7 +17,7 @@ export const router: Routes = [
     { path: 'login-email', component: EmailComponent },
     { path: 'members', component: MembersComponent, canActivate: [AuthService] },
     { path: 'teams', component: TeamsComponent, canActivate: [AuthService] },
-    { path: 'profile', component: ProfileComponent}
+    { path: 'profile', component: ProfileComponent, canActivate: [AuthService]}
 
 ]
 
