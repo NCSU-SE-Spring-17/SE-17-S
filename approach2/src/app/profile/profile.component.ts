@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AngularFire, AuthProviders, AuthMethods, FirebaseObjectObservable} from 'angularfire2';
 import {Router} from '@angular/router';
 import {moveIn, fallIn, moveInLeft} from '../router.animations';
+import auth = firebase.auth;
 
 @Component({
   selector: 'app-profile',
@@ -14,10 +15,11 @@ import {moveIn, fallIn, moveInLeft} from '../router.animations';
 export class ProfileComponent implements OnInit {
 
   state: string = '';
-  error: any;
+  error: any
   user: FirebaseObjectObservable<any[]>;
 
   constructor(public af: AngularFire, private router: Router) {
+
   }
 
   onSubmit(formData) {
@@ -27,7 +29,9 @@ export class ProfileComponent implements OnInit {
         if (auth) {
           var userID = auth.uid;
           this.user = this.af.database.object('/users/' + userID);
-          this.user.update ({
+          this.user.update({
+            name: auth.auth.displayName,
+            email: auth.auth.email,
             skills: {
               backend: formData.value.backend,
               frontend: formData.value.frontend,
@@ -36,16 +40,9 @@ export class ProfileComponent implements OnInit {
           });
         }
       });
-      this.router.navigate(['/members']);
     }
+    this.router.navigate(['/members']);
   }
-
-  logout() {
-    this.af.auth.logout();
-    console.log('logged out');
-    this.router.navigateByUrl('/login');
-  }
-
 
   ngOnInit() {
   }
