@@ -20,13 +20,28 @@ Email: \IEEEauthorrefmark{1}magoff2@ncsu.edu \\
 \maketitle
 
 \section{Introduction}
-\blindtext
+The problem our team was looking to resolve was team creation in a classroom environment. Each of our group members has experiences a struggle with team situations in the past. Our surveys agreed with out predictions in that there are often problems in team building that relate to missing expertise and poor communication. To resolve these poor group situations, our applications will focus on creating teams with a wide variety of skill-sets to try to prevent a team from having an concentration of one skill and not have any members with knowledge of other required skills. Our first approach was an application that allowed for users to put up postings for a specific project and search for other users who fit the skill-set they require. The second approach focuses on a professor who would like to build a team with a wide breadth of skills without much effort on their part. The third application uses a weighted lottery to assign members to known projects based on how well they match up with the projects in question and their preferences for projects. 
+
+For the design of our applications we decided to focus on using the Angular2 web framework and Firebase for our user management and data storage. We decided on these technologies because of their ease of use and the ability to abstract away a lot of the extra processes that do not pertain to our desired functionality like authentication systems. By using the same technologies for all three approaches we also hoped to enable the use of code reuse throughout the projects. 
 
 \section{Approach 1}
 \blindtext
 
 \section{Approach 2}
-\blindtext
+Unlike the other approaches, the second approach focuses on a professor's perspective when creating teams. This web application allows for a class to each log on and select their skills, and when all members have signed up a professor can select the create teams button. Teams will be formed based on the available skill sets in order to optimize the spread of skills across the teams. 
+
+\subsection{Application Outline}
+Creating the views was straight forward and we opted to make the pages simple for now to illustrate the functionality without wasting time on additional bells and whistles. Part of the focus on functionality was to ignore the need for a role based system between professors and students. We felt that using time to develop roles would take away from our time to focus on the important aspect of the application, building teams. As a result, our homepage features a list of all registered users and a check box grid of their skills. This will provide an indication of who will eventually be sorted into teams. On the header bar there is a button to generate teams. When clicked, the page will reload into a team view and present each team in a separate table. It will show the users' name, email, and skill-set. As for authentication we are using Firebase's built in system. We allow users to sign in either via Google in order to take advantage of their NCSU accounts or via the traditional email and password. Due to the built in authentication we did not have to worry about storing sensitive user account info like passwords. Using the Firebase No-SQL database, we store each user's name, email and skills in user objects that are nested in a user list. We also have teams stored in a similar manner once they are created. 
+
+Overall, most of the functionality in this approach was on background implementation, since the functionality focused on automating the professor's task of team creation. As a result the front end is more limited regarding interactions for students. All they need to do is log in to the application in order to register themselves as a member of the team sorting pool. The professor just has to hit one button to create the teams, which are then listed on the page.
+
+\subsection{Roadblocks}
+
+One of the early struggles for the second approach was the framework we chose and some time-line stresses. The original plan was to reuse code from the first approach like the log-in feature in order to have a proper base for the second approach. However, when the time came it was determined to be easier to just use the Angular Command Line Interface (CLI) to create a new Angular2 project and plug into a Firebase environment with a package called AngularFire2. Using the CLI to create new components for the project was as simple as one command and it would automatically fill in all the boilerplate surrounding the project, allowing us to focus on the important aspects of development. 
+
+There were a few additional development snags along the way when writing the second approach. One issue was to figure out how to collect the skills of a new user who authenticated through Google since abstracting authentication away led to confusion on whether or not a user was new. We have resolved this issue by redirecting Google users to a skills page to allow them to modify their skills upon logging in for the first time. This has also enabled us to add a link to allow users to edit their skills as well. Another issue was getting all of the data to appear in the tables throughout the application. After searching around online, we found that having incomplete data objects could lead to an error when querying for data. In order to error check for this kind of issue we found that if you add a question mark to the references it will do a safe look-up and if the object is not found, will just substitute blank data instead. 
+
+The roadblocks for approach 2 were minimal in nature. There were not really any show stopping bugs that came as a result of development so it was a smooth process to create this application. Using the Angular CLI was a great way to avoid working on adding extra boilerplate code to our project manually and allowed us to focus on the important parts of the application. Having Firebase to abstract away a lot of the hassle of data management was a huge time-saver and was a valuable tool in sticking to our time-line. 
 
 \section{Approach 3}
 \blindtext
