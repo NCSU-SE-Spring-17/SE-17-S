@@ -1,5 +1,6 @@
 \documentclass[conference]{IEEEtran}
 \usepackage{blindtext, graphicx}
+\usepackage{float}
 
 \begin{document}
 \title{Three Approaches to a Team Building Application}
@@ -44,7 +45,37 @@ There were a few additional development snags along the way when writing the sec
 The roadblocks for approach 2 were minimal in nature. There were not really any show stopping bugs that came as a result of development so it was a smooth process to create this application. Using the Angular CLI was a great way to avoid working on adding extra boilerplate code to our project manually and allowed us to focus on the important parts of the application. Having Firebase to abstract away a lot of the hassle of data management was a huge time-saver and was a valuable tool in sticking to our time-line. 
 
 \section{Approach 3}
-\blindtext
+Originally we designed approach 3 as a lottery algorithm considering users' preferences and skills, which satisfy both teams and users' requirements. However, when implementing it, we found it difficult to determine preference, weight and other parameters in lottery and the implementation time cost was too high. Considering the time limit, we came up with another approach. The main design is that users can join a team whose positions are available and fit for users' skills. It's implemented as a web application based on JavaScript and HTML, with the support of a Firebase data server.
 
+\subsection{Application Outline}
+The new approach 3 is widely used, similar to the course selection process in college. The positions in a team is limited, so if one team is full, users have to choose other teams. This algorithm gives users freedom to choose their teams and teammates. Users must satisfy the skill requirement of specific position, to ensure building skill balanced teams.
+
+Figure \ref{teams} shows a view in which user can choose one team to join. Positions do not match users skills or is occupied by other users are not available. Once joining a team, users can checkout the details of team members and connect with each other with information provided(Figure \ref{team_info}). If a user is not satisfied with the team formation, she/he can quit the current team and join another one.
+
+\begin{figure}[H]
+  \includegraphics[width=8cm,height=5cm]{image/app3-teams.png}
+  \caption{Team table}
+  \label{teams}
+\end{figure}
+\begin{figure}[H]
+  \includegraphics[width=8cm,height=5cm]{image/app3-teaminfo.png}
+  \caption{Team table}
+  \label{team_info}
+\end{figure}
+
+\subsection{Roadblocks}
+During the development of approach 3, we met three major problems: nested data design, data synchronization and testing.
+
+Data structure design
+
+We have to record positions and team members, in addition to keeping track of which team users have joined. There are three structure of this relation, the first is recording keys in both data object, the second is build relational data, the third is recording relations only in one object(team or user) then tracking other objects by the keys. In approach 3, the first one is chosen. Although this data structure will have some redundancy, adding keys in both objects can reduce nested data retrieving. Consider the primary users of this app are usually in class or department size but not a large population, we trade off some space for shorter data accessing time and easy implementation.
+
+Synchronization
+
+Approach3 faced a problem of data synchronization. This problem occurred when A user quit a team, the user was not in a team but the team information still hadn't been updated. As a result the position is still unavailable to other users. Another scenario was when two users applied for the same position, only one of them was recorded in team object, but the team was recorded in both users' information. These kind of bugs due to Firebase asynchronous data stream. To solve these problem, we use synchronized function to execute code in sequence, and add rollback mechanism when the previous action fails.
+
+Testing
+
+There are different kinds of tools used to test JavaScript code. But some of them do not support testing external service such as Firebase. Since approach 3 is largely based on data server, testing with Firebase support is required. The possible solution is implementing the code in a new language such as Angular-CLI instead of normal JavaScript, which support many external libraries and servers.
 
 \end{document}
