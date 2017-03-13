@@ -16,32 +16,32 @@ export class ProfileComponent implements OnInit {
 
   state: string = '';
   error: any
+  currentUser: any;
   user: FirebaseObjectObservable<any[]>;
 
   constructor(public af: AngularFire, private router: Router) {
-
+    this.af.auth.subscribe(auth => {
+      if (auth) {
+        this.currentUser = auth;
+        this.user = this.af.database.object('/users/' + this.currentUser.uid);
+      }
+    });
   }
 
   onSubmit(formData) {
     if (formData.valid) {
       console.log(formData.value);
-      this.af.auth.subscribe(auth => {
-        if (auth) {
-          var userID = auth.uid;
-          this.user = this.af.database.object('/users/' + userID);
-          this.user.update({
-            name: auth.auth.displayName,
-            email: auth.auth.email,
-            skills: {
-              backend: formData.value.backend,
-              frontend: formData.value.frontend,
-              database: formData.value.database
-            }
-          });
+      this.user.update({
+        name: this.currentUser.auth.displayName,
+        email: this.currentUser.auth.email,
+        skills: {
+          backend: formData.value.backend,
+          frontend: formData.value.frontend,
+          database: formData.value.database
         }
-      });
+      })
     }
-    this.router.navigate(['/members']);
+    this.router.navigateByUrl('/members');
   }
 
   ngOnInit() {
