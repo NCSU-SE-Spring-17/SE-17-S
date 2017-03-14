@@ -20,9 +20,9 @@ export class MembersComponent implements OnInit {
 
   constructor(public af: AngularFire, private router: Router) {
 
-    this.af.auth.subscribe(auth => {
-      if (auth) {
-        this.name = auth;
+    this.af.auth.subscribe(a => {
+      if (a) {
+        this.name = a;
       }
     });
 

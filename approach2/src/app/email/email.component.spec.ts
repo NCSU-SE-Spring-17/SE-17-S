@@ -4,6 +4,11 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { EmailComponent } from './email.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AngularFire, AngularFireModule } from 'angularfire2';
+import { firebaseConfig } from '../../environments/firebase.config';
+import { AngularFireMock } from '../mock/angularfiremock.service';
+import { FormsModule } from '@angular/forms';
 
 describe('EmailComponent', () => {
   let component: EmailComponent;
@@ -11,7 +16,13 @@ describe('EmailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EmailComponent ]
+      imports: [
+        FormsModule,
+        RouterTestingModule,
+        AngularFireModule.initializeApp(firebaseConfig)
+      ],
+      declarations: [ EmailComponent ],
+      providers: [{provide: AngularFire, useClass: AngularFireMock}]
     })
     .compileComponents();
   }));

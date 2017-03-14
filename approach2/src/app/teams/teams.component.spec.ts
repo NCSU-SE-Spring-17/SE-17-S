@@ -4,6 +4,10 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { TeamsComponent } from './teams.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AngularFire, AngularFireModule } from 'angularfire2';
+import { firebaseConfig } from '../../environments/firebase.config';
+import { AngularFireMock } from '../mock/angularfiremock.service';
 
 describe('TeamsComponent', () => {
   let component: TeamsComponent;
@@ -11,7 +15,12 @@ describe('TeamsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TeamsComponent ]
+      imports: [
+        RouterTestingModule, 
+        AngularFireModule.initializeApp(firebaseConfig)
+      ],
+      declarations: [ TeamsComponent ],
+      providers: [{provide: AngularFire, useClass: AngularFireMock}]
     })
     .compileComponents();
   }));

@@ -4,6 +4,11 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { ProfileComponent } from './profile.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { AngularFire, AngularFireModule } from 'angularfire2';
+import { firebaseConfig } from '../../environments/firebase.config';
+import { AngularFireMock } from '../mock/angularfiremock.service';
+import { FormsModule } from '@angular/forms';
 
 describe('ProfileComponent', () => {
   let component: ProfileComponent;
@@ -11,6 +16,11 @@ describe('ProfileComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [
+        FormsModule,
+        RouterTestingModule,
+        AngularFireModule.initializeApp(firebaseConfig)
+      ],
       declarations: [ ProfileComponent ]
     })
     .compileComponents();
