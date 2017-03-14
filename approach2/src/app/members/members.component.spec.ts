@@ -22,7 +22,7 @@ describe('MembersComponent', () => {
         AngularFireModule.initializeApp(firebaseConfig)
       ],
       declarations: [ MembersComponent ],
-      providers: [{provide: AngularFire, useClass: AngularFireMock}]
+      
     })
     .compileComponents();
   }));
