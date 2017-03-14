@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AngularFire, AuthProviders, AuthMethods, FirebaseListObservable} from 'angularfire2';
+import {AngularFire, AuthProviders, AuthMethods, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2';
 import {Router} from '@angular/router';
 import {moveIn, fallIn, moveInLeft} from '../router.animations';
 
@@ -15,7 +15,6 @@ export class MembersComponent implements OnInit {
 
   name: any;
   state: string = '';
-
   users: FirebaseListObservable<any[]>;
 
   constructor(public af: AngularFire, private router: Router) {
@@ -27,7 +26,6 @@ export class MembersComponent implements OnInit {
     });
 
     this.users = af.database.list('/users');
-
   }
 
   logout() {
@@ -38,16 +36,31 @@ export class MembersComponent implements OnInit {
 
   generateTeams() {
     //create team functionality will go here.
-    console.log("Inside generate teams");
-
     function team(teamSkills, userArr) {
       this.teamSkills = teamSkills;
       this.userArr = userArr;
     }
 
+    function user(email, skills) {
+      this.email = email;
+      this.skills = skills;
+    }
+
     var usersInArray = [];
 
-    console.log(usersInArray);
+    this.af.database.list('/users', {preserveSnapshot: true})
+      .subscribe(snapshots => {
+        snapshots.forEach(snapshot => {
+          var tmpEmail = snapshot.val().email;
+          var tmpSkillsObject = snapshot.val().skills;
+          var tmpSkills = [];
+          for (var key in tmpSkillsObject) {
+            tmpSkills.push(key);
+          }
+          var tmpUser = new user(tmpEmail, tmpSkills);
+          usersInArray.push(tmpUser);
+        });
+      })
 
     var teams = [];
 
@@ -98,13 +111,13 @@ export class MembersComponent implements OnInit {
 
     var divideExtraPeople = function () {
       var index = 0;
+      var i = 0;
       while (index < extraMembers.length) {
-        for (var i = 0; i < teams.length; i++) {
-          if (teams[i].userArr.length < 3) {
-            var skillDiff = getSkillDiff(teams[i].teamSkills, extraMembers[index].skills);
-            teams[i % teams.length] = addUserToTeam(teams[i], extraMembers[index++], skillDiff);
-          }
-        }
+        i = i % teams.length;
+        var skillDiff = getSkillDiff(teams[i].teamSkills, extraMembers[index].skills);
+        teams[i] = addUserToTeam(teams[i], extraMembers[index], skillDiff);
+        index++;
+        i++;
       }
     }
 
@@ -112,10 +125,26 @@ export class MembersComponent implements OnInit {
     teamGeneration();
     divideExtraPeople();
 
+    console.log("Inside database saving");
+    var teamsInDatabase = this.af.database.list('/teamsDemo');
+    teamsInDatabase.remove();
     for (var i = 0; i < teams.length; i++) {
-      console.log(teams[i]);
+      teamsInDatabase.push({
+        skills: teams[i].teamSkills,
+        users: teams[i].userArr
+      });
+    }
+
+
+    for (var i = 0; i < teams.length; i++) {
+      console.log("TEAM " + i);
+      console.log(teams[i].teamSkills);
+      for (var j in teams[i].userArr) {
+        console.log(teams[i].userArr[j]);
+      }
       console.log("");
     }
+
 
     this.router.navigateByUrl('/teams');
   }
