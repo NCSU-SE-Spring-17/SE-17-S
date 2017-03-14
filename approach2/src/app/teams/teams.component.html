@@ -1,21 +1,19 @@
 <div class="form-container" id="toolbar">
-    <header [@fallIn]="state">
-      <button (click)="logout()" class="basic-btn">Logout</button>
-      <button (click)="back()" class="basic-btn">Back</button>
-    </header>
-    <div id="page" [@moveInLeft]="state">
-      <h2>Assembled Teams</h2>
-
-      <table *ngFor="let team of teams | async">
-        <tr>
-          <th>{{team.name}}</th>
-        </tr>
-        <tr *ngFor="let member of team.members">
-          <td>{{member}}</td>
-        </tr>
-      </table>
-
-      
-    </div>
-    
+  <header [@fallIn]="state">
+    <button (click)="logout()" class="basic-btn">Logout</button>
+    <button (click)="back()" class="basic-btn">Back</button>
+  </header>
+  <div id="page" [@moveInLeft]="state">
+    <h2>Assembled Teams</h2>
+    <table>
+      <th>Email</th>
+      <th>Skills</th>
+      <tr *ngFor="let team of teams | async">
+        <div *ngFor="let user of team.users">
+          <td>{{user.email}}</td>
+        </div>
+        <td>{{team.skills}}</td>
+      </tr>
+    </table>
+  </div>
 </div>

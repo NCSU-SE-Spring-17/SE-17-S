@@ -37,3 +37,7 @@ h2 {
         margin-left: -45%;
     }
 }
+
+th, td {
+  text-align: center;
+}

@@ -13,10 +13,11 @@ import { moveIn, fallIn, moveInLeft } from '../router.animations';
 export class TeamsComponent implements OnInit {
 
   teams: FirebaseListObservable<any[]>;
+  index: number;
 
   constructor(public af: AngularFire,private router: Router) {
-    this.teams = af.database.list('/teams');
-
+    this.teams = af.database.list('/teamsDemo');
+    this.index = 1;
    }
 
   back() {
