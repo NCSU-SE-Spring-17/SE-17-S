@@ -1,8 +1,6 @@
 # Introduction
 
-This project is an web application providing one solution to build teams. 
-
-The app has functions of user authentication and updating profile.
+This project is an web application providing one solution to build teams.
 
 
 # Dependency
@@ -28,6 +26,8 @@ Google design
 
 -- Edit or update profile
 
--- Aproach 3 for team building(up coming...)
+-- Aproach 3 for team building
+
+-- Config teams
 
 
