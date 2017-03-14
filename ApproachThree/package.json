@@ -6,15 +6,31 @@
   "repository": "https://github.com/angular/angular-seed",
   "license": "MIT",
   "devDependencies": {
+    "angular-mocks": "^1.6.2",
     "bower": "^1.7.7",
+    "browserify": "^14.1.0",
+    "chai": "^3.5.0",
     "http-server": "^0.9.0",
-    "jasmine-core": "^2.4.1",
+    "jasmine": "^2.5.3",
+    "jasmine-core": "^2.5.2",
     "karma": "^0.13.22",
+    "karma-browserify": "^5.1.1",
     "karma-chrome-launcher": "^0.2.3",
+    "karma-commonjs": "^1.0.0",
     "karma-firefox-launcher": "^0.1.7",
     "karma-jasmine": "^0.3.8",
-    "karma-junit-reporter": "^0.4.1",
-    "protractor": "^4.0.9"
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "karma-junit-reporter": "^0.4.2",
+    "karma-ng-scenario": "^1.0.0",
+    "karma-webpack": "^2.0.2",
+    "lodash": "^4.17.4",
+    "mockfirebase": "^0.12.0",
+    "protractor": "^4.0.9",
+    "proxyquire": "^1.7.11",
+    "sinon": "^1.17.7",
+    "sinon-chai": "^2.8.0",
+    "watchify": "^3.9.0",
+    "webpack": "^2.2.1"
   },
   "scripts": {
     "postinstall": "bower install",
@@ -32,6 +48,8 @@
     "update-index-async": "node -e \"var fs=require('fs'),indexFile='app/index-async.html',loaderFile='app/bower_components/angular-loader/angular-loader.min.js',loaderText=fs.readFileSync(loaderFile,'utf-8').split(/sourceMappingURL=angular-loader.min.js.map/).join('sourceMappingURL=bower_components/angular-loader/angular-loader.min.js.map'),indexText=fs.readFileSync(indexFile,'utf-8').split(/\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/).join('//@@NG_LOADER_START@@\\n'+loaderText+'    //@@NG_LOADER_END@@');fs.writeFileSync(indexFile,indexText);\""
   },
   "dependencies": {
-    "firebase": "^3.6.9"
+    "angular": "^1.6.2",
+    "firebase": "^3.6.9",
+    "mockfirebase": "latest"
   }
 }

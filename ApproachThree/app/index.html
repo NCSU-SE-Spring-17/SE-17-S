@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-light_blue.min.css" />
     <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.1.1.css">
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 </head>
 
@@ -45,19 +46,21 @@
         </div>
         </tr><tr>
             <div  class="loginContainer" >
-                <button id="btnLogin" class="mdl-button mdl-js-button"> Log in </button>
-                <button id="btnSignUp" class="mdl-button mdl-js-button"> Sign up </button>
+                <button id="btnLogin" class="mdl-button mdl-js-button" onclick="login(document.getElementById('txtEmail').value,document.getElementById('txtPassword').value)"> Log in </button>
+                <button id="btnSignUp" class="mdl-button mdl-js-button" onclick="signup(document.getElementById('txtEmail').value,document.getElementById('txtPassword').value)"> Sign up </button>
             </div>
         </tr><tr>
             <div class="loginContainer" >
                 <p></p>
-                <a id="showError"> hello </a>
+                <a id="showError"> </a>
             </div>
         </tr>
     </table></div>
     <label id="test1">test</label>
 </div>
-
+<p></p>
+<p></p>
+<p></p>
   <!-- In production use:
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
   -->
@@ -68,21 +71,9 @@
 <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-database.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-messaging.js"></script>
 <script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
-<script>
-    // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyDLpM28KDFcp2LnEs2q1JC6_MU2nTni3Dc",
-        authDomain: "test-1ab03.firebaseapp.com",
-        databaseURL: "https://test-1ab03.firebaseio.com",
-        storageBucket: "test-1ab03.appspot.com",
-        messagingSenderId: "542459299256"
-    };
-    firebase.initializeApp(config);
-</script>
 
 <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-
-<script src="test.js"></script>
+<script src="index.js"></script>
 <script src="app.js"></script>
 </body>
 

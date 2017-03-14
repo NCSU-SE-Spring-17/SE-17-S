@@ -1,6 +1,16 @@
 /**
  * Created by Eugenedjj on 2/25/17.
  */
+//
+// var config = {
+//     apiKey: "AIzaSyDLpM28KDFcp2LnEs2q1JC6_MU2nTni3Dc",
+//     authDomain: "test-1ab03.firebaseapp.com",
+//     databaseURL: "https://test-1ab03.firebaseio.com",
+//     storageBucket: "test-1ab03.appspot.com",
+//     messagingSenderId: "542459299256"
+// };
+// firebase.initializeApp(config);
+
 firebase.auth().onAuthStateChanged(function(user){
     if(user){
         //signed in
@@ -10,7 +20,7 @@ firebase.auth().onAuthStateChanged(function(user){
         showTable(firebaseRef);
     }
     else{
-        window.location = 'index.html';
+        //window.location = 'index.html';
     }
 });
 
@@ -29,7 +39,7 @@ function initTable(firebaseRef){
     var teamTable = $("#teaminfo");
     var teamConfig = firebaseRef.child('config');
 
-    teamTable.append("<thead><tr>");
+    teamTable.append("<thead id='thead'><tr>");
     teamTable.append("<th><div class='td2'>Email</div></th>");
     teamTable.append("<th><div class='td2'>Name</div></th>");
     teamTable.append("<th><div class='td2'>Position</div></th>");

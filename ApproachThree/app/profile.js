@@ -2,6 +2,8 @@
  * Created by Eugenedjj on 2/16/17.
  */
 //get element input
+
+
 function submitClick(){
     var name = $("#changeName").val();
 
@@ -29,7 +31,7 @@ function submitClick(){
         });
     }
     else{
-        window.alert("Update succeed!");
+        //window.alert("Update succeed!");
     }
 
 }

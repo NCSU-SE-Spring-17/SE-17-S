@@ -1,6 +1,7 @@
 /**
  * Created by Eugenedjj on 2/24/17.
  */
+
 firebase.auth().onAuthStateChanged(function(user){
     if(user){
         //signed in
@@ -11,7 +12,7 @@ firebase.auth().onAuthStateChanged(function(user){
 
     }
     else{
-        window.location = 'index.html';
+        //window.location = 'index.html';
     }
 });
 

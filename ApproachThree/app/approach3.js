@@ -4,17 +4,19 @@
  */
 
 //check login
+
+
 firebase.auth().onAuthStateChanged(function(user){
     if(user){
         //signed in
         var firebaseRef = firebase.database().ref();
 
         initTable(firebaseRef);
-        showTable(firebaseRef);
-        $("#test1").text("The apply button only available when you are not in a team and your skill fits the requirement");
+        showTable(firebaseRef,firebase.auth().currentUser.uid);
+        $("#test1").text("The JOIN button only available when you are not in a team and your skill fits the requirement");
     }
     else{
-        window.location = 'index.html';
+        //window.location = 'index.html';
     }
 });
 
@@ -33,7 +35,7 @@ function initTable(firebaseRef){
     var teamTable = $("#app3Teams");
     var teamConfig = firebaseRef.child('config');
 
-    teamTable.append("<thead><tr>");
+    teamTable.append("<thead id='thead'><tr>");
     teamTable.append("<th><div class='td'>ID</div></th>");
     teamConfig.child('positions').on('child_added', function(snapshot){
         teamTable.append("<th><div class='td'>"+ snapshot.val()+"</div></th>");
@@ -44,21 +46,19 @@ function initTable(firebaseRef){
 }
 
 //show all table---------------------------------------
-function showTable(firebaseRef) {
+function showTable(firebaseRef,uid) {
     var teamTable = $("#app3Teams");
     var teamConfig = firebaseRef.child('team');
-    var user = firebase.auth().currentUser;
-    firebaseRef.child('user').child(user.uid).once('value').then(function(snap){
+    firebaseRef.child('user').child(uid).once('value').then(function(snap){
         var skill={
             1:snap.child('skill').child('frontEnd').val(),
             2:snap.child('skill').child('backEnd').val(),
             3:snap.child('skill').child('database').val()
         };
-        var u={
+        return {
             team:snap.val().team,
             skills:skill
         };
-        return u;
     }).then(function (u) {
         //alert(u.skills.backEnd);
         teamConfig.on("child_added", function (snapshot) {
@@ -82,8 +82,8 @@ function showTable(firebaseRef) {
                         }
                     }
                     else {
-                        if(snapshot.key == u.team && snapshot.child(i).val() == user.uid){
-                            teamTable.append('<td bgcolor="#f0f8ff"> <button id="btnc-' + snapshot.key + '-' + i + '" class="mdl-button mdl-js-button" onclick="cancelTeam(this.id)"> CANCEL </button> </td>');
+                        if(snapshot.key == u.team && snapshot.child(i).val() == uid){
+                            teamTable.append('<td bgcolor="#f0f8ff"> <button id="btnc-' + snapshot.key + '-' + i + '" class="mdl-button mdl-js-button" onclick="cancelTeam(this.id)"> QUIT </button> </td>');
                         }
                         else{
                             teamTable.append("<td class='ocupy'>OCUPIED</td>");
@@ -98,9 +98,6 @@ function showTable(firebaseRef) {
     });
 
 
-}
-function settxt(str) {
-    $("#test1").text(str);
 }
 function applyTeam(id){
     var btnprop = id.split("-");
@@ -130,7 +127,7 @@ function cancelTeam(id) {
             location.reload('approach3.html');
         },function(error){
             firebaseRef.child('team').child(btnprop[1]).child(btnprop[2]).set(user.uid);
-            window.alert("The cancellation can not be done, please try again!");
+            window.alert("The cancellation fails, please try again!");
         });
     },function(e) {
         window.alert(e.message);
