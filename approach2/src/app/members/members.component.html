@@ -5,7 +5,7 @@
     <button routerLink="/profile" class="basic-btn">Edit Profile</button>
   </header>
   <div id="page" [@moveInLeft]="state">
-    <h2>Hey {{ name.auth.displayName }}!</h2>
+    <h2>Hey {{ (currentUser | async)?.name }}!</h2>
 
     <h2>User Table</h2>
 
