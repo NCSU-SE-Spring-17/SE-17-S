@@ -1,3 +1,4 @@
 # SE-17-S
 
-More to come
+Web application for team creation.
+The three approaches are present in the branches of this repository.
