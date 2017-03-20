@@ -114,12 +114,15 @@ export class MembersComponent implements OnInit {
       var i = 0;
       while (index < extraMembers.length) {
         i = i % teams.length;
-        var skillDiff = getSkillDiff(teams[i].teamSkills, extraMembers[index].skills);
-        teams[i] = addUserToTeam(teams[i], extraMembers[index], skillDiff);
-        index++;
+        if (teams[i].userArr.length < 3) {
+          console.log(teams[i].userArr.length);
+          var skillDiff = getSkillDiff(teams[i].teamSkills, extraMembers[index].skills);
+          teams[i] = addUserToTeam(teams[i], extraMembers[index], skillDiff);
+          index++;
+        }
         i++;
       }
-    }
+    };
 
 
     teamGeneration();
