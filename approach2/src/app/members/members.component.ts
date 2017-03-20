@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AngularFire, AuthProviders, AuthMethods, FirebaseListObservable, FirebaseObjectObservable} from 'angularfire2';
 import {Router} from '@angular/router';
 import {moveIn, fallIn, moveInLeft} from '../router.animations';
+import auth = firebase.auth;
 
 @Component({
   selector: 'app-members',
@@ -13,15 +14,18 @@ import {moveIn, fallIn, moveInLeft} from '../router.animations';
 
 export class MembersComponent implements OnInit {
 
-  name: any;
+  authState: any;
   state: string = '';
   users: FirebaseListObservable<any[]>;
+  currentUser: FirebaseObjectObservable<any[]>;
 
   constructor(public af: AngularFire, private router: Router) {
 
-    this.af.auth.subscribe(a => {
-      if (a) {
-        this.name = a;
+    this.af.auth.subscribe(auth => {
+      if (auth) {
+        this.authState = auth;
+        this.currentUser = this.af.database.object('/users/' + this.authState.uid);
+        console.log(this.currentUser);
       }
     });
 
