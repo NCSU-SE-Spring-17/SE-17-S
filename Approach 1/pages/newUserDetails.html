@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><b>Update details</b></title>
+</head>
+<H2 align="left">Update details</H2>
+
+<Body>
+
+<div>
+    <H3 align="left">Enter your new details:</H3>
+
+    <form>
+        <input type="text" ng-model="userName" placeholder="Name" required >
+        <input type="text" ng-model="userPhone" placeholder="Phone Number" required >
+        <input type="text" ng-model="userSkill" placeholder="Skill" required >
+        <input type="button" class="btn btn-primary" value="Submit" ng-click = "addNewUserToDatabase(userName,userPhone,userSkill)">
+    </form>
+
+</div>
+
+<h6>[NOTE: If you are entering multiple skills, enter them separated with a comma.]</h6>
+
+</Body>
+
+</html>
