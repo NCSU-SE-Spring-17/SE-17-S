@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><b>Edit skills</b></title>
+</head>
+<body>
+
+<h2>Edit skills </h2>
+
+<div>
+    <h3> Enter skill which you want to add:</h3>
+
+    <form>
+        <input type="text" ng-model="value3" placeholder="Type here..." required >
+        <input type="button" class="btn btn-primary" value="Add Skill" ng-click = "addThisSkill(value3)">
+    </form>
+
+</div>
+
+<div>
+    <h3> Enter skill which you want to remove:</h3>
+
+    <form>
+        <input type="text" ng-model="value4" placeholder="Type here..." required >
+        <input type="button" class="btn btn-primary" value="Remove Skill" ng-click = "removeThisSkill(value4)">
+    </form>
+
+</div>
+
+<div align="left">
+
+    Your current skills are:
+
+    <ul>
+        <li ng-repeat="skills in skills">{{skills}}</li>
+    </ul>
+
+</div>
+
+</body>
+</html>
