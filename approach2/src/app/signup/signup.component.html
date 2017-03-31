@@ -1,0 +1,20 @@
+<div class="form-container">
+  <a routerLink="/login" id="goback">Go back</a>
+
+  <h2>Join now</h2>
+
+  <span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>
+
+  <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+
+    <input type="text" placeholder="Display name..." (ngModel)="name" name="name" class="txt" required>
+    <input type="text" placeholder="Email address.." (ngModel)="email" name="email" class="txt" required>
+    <input type="password" placeholder="Password" (ngModel)="password" name="password" class="txt" required>
+    <label><input type="checkbox" (ngModel)="backend" name="backend">Backend</label>
+    <label><input type="checkbox" (ngModel)="frontend" name="frontend">Frontend</label>
+    <label><input type="checkbox" (ngModel)="database" name="database">Database</label>
+
+
+    <button type="submit" [disabled]="!formData.valid" class="basic-btn">Create my account</button>
+  </form>
+</div>
