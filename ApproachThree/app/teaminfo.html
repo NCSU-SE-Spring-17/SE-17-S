@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-light_blue.min.css" />
+    <link rel="stylesheet" href="app.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</head>
+
+<body>
+
+<div class="mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout-icon"></div>
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout__title">Team Finder</span>
+            <div class="mdl-layout-spacer"></div>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="profile.html">Profile</a>
+                <a class="mdl-navigation__link" href="approach3.html">Approach 3</a>
+                <a class="mdl-navigation__link" href="index.html" onclick="logout()">Logout</a>
+            </nav>
+        </div>
+    </header>
+    <p></p>
+    <p></p>
+    <div id="approach3" class="table">
+        <table id="teaminfo"  class="mdl-data-table mdl-js-data-table td">
+        </table>
+    </div>
+    <p></p>
+    <div class="loginContainer">
+        <label id="test1" >test</label>
+    </div>
+
+</div>
+
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+
+<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-messaging.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+
+<script src="firebaseconfig.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script src="teaminfo.js"></script>
+</body>
+</html>
