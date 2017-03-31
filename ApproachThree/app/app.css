@@ -1,0 +1,61 @@
+/* app css stylesheet */
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li + li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+.loginContainer {
+  margin:0px auto;
+  width:500px; /* 必须制定宽度 */
+  align:"center";
+  align-items: center;
+}
+.demo-list-control {
+  width: 300px;
+}
+
+.demo-list-radio {
+  display: inline;
+}
+.td {
+  margin:0px auto;
+  width:58px; /* 必须制定宽度 */
+  align:"center";
+  align-items: center;
+  text-align: center;
+}
+.td2 {
+  margin:0px auto;
+  width:100px; /* 必须制定宽度 */
+  align:"center";
+  align-items: center;
+  text-align: left;
+}
+.table{
+  width: 100%;
+  table-layout: fixed;
+  float: left;
+  overflow: auto;
+}
+.ocupy{
+  color: darkgray;
+}
