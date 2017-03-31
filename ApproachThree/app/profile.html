@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.grey-light_blue.min.css" />
+    <link rel="stylesheet" href="app.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+</head>
+
+<body>
+
+<div class="mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout-icon"></div>
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout__title">Team Finder</span>
+            <div class="mdl-layout-spacer"></div>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link" href="profile.html">Profile</a>
+                <a class="mdl-navigation__link" href="approach3.html">Approach 3</a>
+                <a class="mdl-navigation__link" href="index.html" onclick="logout()">Logout</a>
+            </nav>
+        </div>
+    </header>
+    <p></p>
+    <p></p>
+    <table id="pro" class = "loginContainer">
+        <tr>
+            <td>
+                <div id = "basic" class = "loginContainer">
+                    <form action="#">
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input id="showEmail" class="mdl-textfield__input" type="email" readonly>
+                            <!--<label class="mdl-textfield__label">Email...</label>-->
+                        </div>
+
+                        <form action="#">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input id="changePassword" class="mdl-textfield__input" type="password">
+                                <label class="mdl-textfield__label">Change password...</label>
+                            </div>
+                        </form>
+
+
+                        <form action="#">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input id="changeName" class="mdl-textfield__input" type="text">
+                                <label class="mdl-textfield__label">Name...</label>
+                            </div>
+                        </form>
+                    </form>
+                </div>
+            </td>
+            <td>
+                <div id = 'skill' class = "loginContainer">
+                    <ul class="demo-list-control mdl-list">
+                        <li class="mdl-list__item">
+                                <span class="mdl-list__item-primary-content">
+                                    Front-End
+                                </span>
+                            <span class="mdl-list__item-secondary-action">
+                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="frontEnd">
+                                        <input type="checkbox" id="frontEnd" class="mdl-checkbox__input"/>
+                                    </label>
+                                </span>
+                        </li>
+                    </ul>
+                    <ul class="demo-list-control mdl-list">
+                        <li class="mdl-list__item">
+                                <span class="mdl-list__item-primary-content">
+                                    Back-End
+                                </span>
+                            <span class="mdl-list__item-secondary-action">
+                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="backEnd">
+                                        <input type="checkbox" id="backEnd" class="mdl-checkbox__input"/>
+                                    </label>
+                                </span>
+                        </li>
+                    </ul>
+                    <ul class="demo-list-control mdl-list">
+                        <li class="mdl-list__item">
+                                <span class="mdl-list__item-primary-content">
+                                    Database
+                                </span>
+                            <span class="mdl-list__item-secondary-action">
+                                    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="database">
+                                        <input type="checkbox" id="database" class="mdl-checkbox__input"/>
+                                    </label>
+                                </span>
+                        </li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id ='team' class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <label class="mdl-textfield__input>team assignment">Team Assignment: </label>
+                    <a id="teamInfo"class="mdl-navigation__link" href="teaminfo.html">team1</a>
+                </div>
+            </td>
+            <td>
+                <div class="loginContainer">
+                    <button id="submitPro" class="mdl-navigation__link" onclick="submitClick()"> Submit Change </button>
+                </div>
+            </td>
+
+        </tr>
+
+    </table>
+    <label id="test1"></label>
+
+</div>
+
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+
+<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase-messaging.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/3.6.10/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDLpM28KDFcp2LnEs2q1JC6_MU2nTni3Dc",
+        authDomain: "test-1ab03.firebaseapp.com",
+        databaseURL: "https://test-1ab03.firebaseio.com",
+        storageBucket: "test-1ab03.appspot.com",
+        messagingSenderId: "542459299256"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+
+<script src="profile.js"></script>
+<script src="app.js"></script>
+</body>
+
+
+</html>

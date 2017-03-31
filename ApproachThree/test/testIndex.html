@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.1.1.css">
+
+</head>
+<body>
+<div id="qunit"></div>
+<div id="qunit-fixture">
+    <div class="mdl-layout mdl-js-layout">
+        <!--headder, choose different methods-->
+        <header id="header" class="mdl-layout__header">
+            <div class="mdl-layout-icon"></div>
+            <div class="mdl-layout__header-row">
+                <span class="mdl-layout__title">Team Finder</span>
+                <div class="mdl-layout-spacer"></div>
+            </div>
+        </header>
+        <p></p>
+        <p></p>
+        <p></p>
+        <!--login panel-->
+        <div id="loginContainer">
+            <table >
+                <tr>
+                    <div  class="loginContainer">
+                        <form action="#">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input id="txtEmail" class="mdl-textfield__input" type="email">
+                                <label class="mdl-textfield__label">Email...</label>
+                            </div>
+                        </form>
+                        <form action="#">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input id="txtPassword" class="mdl-textfield__input" type="password">
+                                <label class="mdl-textfield__label">Password...</label>
+                            </div>
+                        </form>
+
+                    </div>
+                </tr><tr>
+                <div  class="loginContainer" >
+                    <button id="btnLogin" class="mdl-button mdl-js-button"> Log in </button>
+                    <button id="btnSignUp" class="mdl-button mdl-js-button"> Sign up </button>
+                </div>
+            </tr><tr>
+                <div class="loginContainer" >
+                    <p></p>
+                    <a id="showError"> hello </a>
+                </div>
+            </tr>
+            </table></div>
+        <label id="test1">test</label>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script src="//code.jquery.com/qunit/qunit-1.14.0.js"></script>
+
+<script src="../app/index.js"></script>
+<script src="testAuth.js"></script>
+
+</body>
+</html>
