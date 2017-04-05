@@ -25,24 +25,59 @@ Email: \IEEEauthorrefmark{1}magoff2@ncsu.edu \\
 \blindtext
 
 \section{Experiment}
-\blindtext
+This section will outline the parts of the experiment we conducted with our participants during individual sessions held at Hunt Library.
 
 \subsection{Task Methodology}
-\blindtext
+In order to prove the value of automated group sorting in approach 2 we created a list of 20 randomly generated users with varying skills in front-end, back-end and database development. We gave each participant a blank sheet of notebook paper and asked them to sort the users into 7 balanced groups based off of the available skills. We intentionally neglected to provide any further direction so we could see what the thought process would be as they wrote the teams on the paper. We also tracked the time it took to complete the formation of 7 teams. 
+
+After having the participants manually sort through the table of users we had them log into an account on the team generation web-page and allowed them to generate the teams automatically using the same set of users that were also inserted into the database. We noted the time from logging in to arriving at the generated teams page.
+
+Following the experiment for the second approach we had the participant fill out a Google form with some survey questions to get a feel of their impressions. We asked "Is it clear to you what approach 2 does and its purpose?" in order to confirm that users understood the point of the application. We asked "Is it easy to perform the basic functions of approach 2" and "If you had to use approach 2 again would you need assistance or support?" to make sure that the usability was good for the second approach. We asked if the user felt that approach 2 made it easier to create teams and to rate the overall experience to make sure that the application was useful to the user. Finally we asked what improvements they suggested for the application. We made this an open ended question so we could get broad feedback about the application. 
+
+\subsection{Participants}
+We chose participants who were graduate students at North Carolina State University from the Software Engineering class. All participants came to in person sessions where we walked them through the applications in order to assess their feedback in person. 
+
+Before starting the demos, we wanted to collect background information about the participants. We asked them if they thought skill was an important factor in deciding a team's performance to which 96\% of respondents responded yes. The point of this question was to make sure that these participants shared our view that skills were one of the most important factors in developing a strong team since we based our entire applications around this idea. 
+
+We also asked the participants if they had the ability to choose team members based off of their skills if it would be helpful to them. We found that 100\% of respondents responded yes to this question, proving that skills are certainly an important factor in creating a good team. 
+
 
 \section{Results}
-\blindtext
+In approach 2 the results of the timing activity were pretty much as expected. Out of 25 participants the time to sort the 20 users manually into balanced groups based off of their skills took an average of 3 minutes and 55 seconds. When logging into the application and selecting generate groups the participants took an average of 12.92 seconds to complete the activity. So it is significantly faster to let the computer do the sorting for you to a factor of about 18 times faster. 
+
+We were surprised to see that almost all of the manual responses had very similar group setups when the activity was complete. We think that it might have something to do with just going in order down the list filling in each group as you go. Unsurprisingly, this was very similar to the group structure the application took as well so the performance of each was comparable. The time difference is what really stands out in automating team creation.
+
+The results for the survey were positive for the second approach as well. When asked whether the application's purpose was clear, 100\% of respondents answered yes. All of the respondents also said yes to the question of whether it was was easy to perform the basic functions of the application. However, only 84\% of respondents said they would not need assistance to use the application again. Fortunately, 100\% of people agreed that the application made it easier to form balanced teams, which was our intent with the application. Finally, the user experience looks good, on a scale of 1 to 5 for user experience, 84\% of users rated it as a 5 and the remainder rated it as a 4 on user experience. 
+
 
 \section{Discussion}
+After conducting user evaluations and collecting results we were able to arrive at a plethora of conclusions about our applications. The most obvious being that we have plenty of room for improvement on the layout and flow of our applications. When we were working on each application separately we all took different design paths which lead to some confusion among participants on how to use the various features. We were already aware of some smaller issues, since we only had a limited development time and a workable prototype was okay, but introducing unbiased users into the system revealed a lot more issues than what was on the surface. 
+
+Within this section, we will discuss the key points about each approach especially the strengths and weaknesses of each one. In order to draw these conclusions, we will synthesis the data from the survey with the primary focus on the short answer responses, since that is where the respondents were allowed the most freedom in their opinions. 
+
+\subsection{Observations / Limitations}
+
+\subsection{Approach 1}
+
+\subsection{Approach 2: Automated Sorting}
+Approach 2 was the most hands-off approach for the user since the machine does most of the work on the user's behalf. This made it more difficult to give a traditional tour of the application since there was pretty much only one button for the user to press when acting as the role of the professor. However, the results were exactly what was expected. The application successfully created balanced teams at the push of a button that were on par with the teams that were formed manually by survey participants and in a fraction of the time. 
+
+When we asked the users about what improvements could be made to the second approach we got a lot of great responses back. We were pleased to find out that most of the responses were compliments including that it was perfect and that it was well developed, both of which are great signs for the usability of the application. In addition to praise, a lot of the responses were smaller nitpicks about the application itself, like to add the names to the sorted teams page, a small detail we forgot to add in implementation. Other suggestions included, adding a scale of proficiency for the skill categories or even the introduction of a Testing category for required skills in a team. Both of these suggestions are great recommendations to improve the quality of the application that were not even considered at all during development. When you introduce weighted proficiencies in multiple skills you can allow the system to more intelligently place you into a group under a skill that you are stronger with rather than one that you have just learned. It also avoids the binary approach to either knowing something or not since that can vary based on the subject's own opinion of their skills. The Testing category is another great addition since it is another broad category and does not fit well underneath any of the other existing skills. 
+
+A lot of participants suggested to break the categories down into a more granular approach of skills similar to approach 1. While having more information about each user is generally a good thing we think that keep the categories broad is more appropriate for a project environment. It would be much harder to sort groups based off of a wide skill pool since it would be nearly impossible to create balanced groups. At least within each broad skill category the thought process would translate easier across arbitrary languages. Since the languages are not defined for projects the idea of transferable skills were more preferred. School always preaches that you shouldn't learn the language but rather the concept. 
+
+One final preference was to add the ability for the professor to tweak the results. We thought this was a great idea because the professor will always know the class better than the computer does and will already have some idea of how well certain students may work together. In order to implement this, we should let each row in the team table be draggable which will allow for a professor to slide a student from one group to another however they want. 
+
+Overall, the second approach was pretty popular among survey respondents, there were a number of great suggestions that were not previously considered which is great insight for future development on these applications. When we asked users for their reasoning behind picking their favorite application, the respondents had a lot of good insight about approach 2. The most popular opinions were that it was fast and random which allowed busy students to quickly find teams that were automatically balanced. So when students don't mind meeting new people and quickly getting into a team without any extra work on their part, the automated team creation application definitely shines. 
+
+\subsection{Approach 3}
+
+
+
+\subsection{Best Approach}
 \blindtext
 
-\subsection{Observations / Limitiations}
-\blindtext
-
-\section{Best Approach}
-\blindtext
-
-\section{Future Work}
+\subsection{Future Work}
 \blindtext
 
 \section{Conclusion}
