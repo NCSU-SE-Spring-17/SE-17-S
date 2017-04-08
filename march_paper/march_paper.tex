@@ -4,7 +4,8 @@
 \usepackage{float}
 
 \begin{document}
-\title{Three Approaches to a Team Building Application}
+\title{TeamFindr: Application for skill based team division}
+\subtitle{Evaluation of the three approaches}
 
 \author{\IEEEauthorblockN{Michael Goff\IEEEauthorrefmark{1},
 Shashank Jha\IEEEauthorrefmark{2},
@@ -20,21 +21,25 @@ Email: \IEEEauthorrefmark{1}magoff2@ncsu.edu \\
 
 % make the title area
 \maketitle
-
 \section{Abstract}
-Every now and then students from every discipline have to team up for group projects. The success of the projects could depend on various factors such as the skills of the students partaking, social compatibility, matching schedule, interests, past experience. Through our project we have aimed to facilitate the process of team division based on skills or expertise in different facets of software development such as front-end, back-end, database. For the same, we have created three different applications using Google's Firebase and AngularJS. We then conducted experiments to compare all three approaches and asked users for feedback for further improvements.      
+Every now and then students from every discipline have to team up for group projects. The success of the projects could depend on various factors such as the skills of the students partaking, social compatibility, matching schedule, interests, past experience, etc. Through our project we have aimed to facilitate the process of team division based on skills or expertise in different facets of software development such as front-end, back-end and database. For the same, we have created three different applications using Google's Firebase and Angular2. We then conducted experiments to compare all three approaches and asked users for feedback for further improvements. In the end, we found that no approach really stood out from the rest as users preferred differnt approaches for different reasons. Some user's preferred to be assigned into a random group while others liked choosing their own members. The best approach moving forward would be to combine the aspects of each application into one.       
+
 \section{Keywords}
 Team division, balanced teams, joining team, creating team
 
 \section{Introduction}
-After presenting our idea to the SE class and doing user evaluation sessions, we concluded that building a team creation application is definitely worth a go. Out of all the factors which contributes to a team successfully working together, we decided to concentrate on skill-set division. Hence, our first approach was to allow users to search for other users with a particular skill set which they require in their project. Second approach was intended for the professor, where they already have a list of users and their expertise areas and with one press of button, they can create multiple teams with balanced expertise. Third approach was allowing user to join only those teams which has positions matching their expertise.
-In this paper, we first discuss the experiments which we did as part of evaluation and the response of the participants. After that we explain all three approaches and improvements which we can make in them based on user feedback. Finally, we conclude which one is the best approach among three and what can be done to take the project further in future.
+Out of all the factors which contributes to a team successfully working together, we decided to concentrate on skill-set division. After an initial feasibility study, we collected data that indicated a more intelligent way to approach project team creation was desired among graduate students. Our first approach was to allow users to search for other users with a particular skill set which they require in their project. The second approach was intended for the professor, where they already have a list of users and their expertise areas and with one press of button, they can create multiple teams with balanced expertise. The third approach was allowing user to join only those teams which has positions matching their expertise.
+
+In this paper, we discuss the experiments which we did as part of evaluation and the responses of the participants. After that, we analyze the responses to all three approaches and determine improvements which we can make in them based on user feedback. Finally, we conclude which one is the best approach among three and what can be done to take the project further in future.
 
 \section{Experiment}
 This section will outline the parts of the experiment we conducted with our participants during individual sessions held at Hunt Library.
 
 \subsection{Task Methodology}
-For each approach, we designed scenarios for users to use the application. Approach 1 and 3 are student based applications, we evaluate them by user's experience. 
+
+For each approach, we designed scenarios for users to use the application. Approach 1 and 3 are student based applications, we evaluate them by the user's experience. 
+
+Evaluation for approach 1 was pretty straight forward. Users were asked to make accounts on the application and complete their profile by adding their skills. Then the users were asked to go on to the search page of the application and conduct searches on fellow students based on their skills. Thereafter, the evaluators were asked questions in the form of a survey for this approach to evaluate the user experience, learn-ability, understandability, usability and the human computer aspect of the application.
 
 In order to prove the value of automated group sorting in approach 2 we created a list of 20 randomly generated users with varying expertise in front-end, back-end and database development. We gave each participant a blank sheet of paper and asked them to sort the users into balanced groups based off of the available skills. We intentionally neglected to provide any further direction so we could see what the thought process would be as they wrote the teams on the paper. We also tracked the time it took to complete the formation of teams. 
 
@@ -42,12 +47,12 @@ After having the participants manually sort through the table of users we had th
 
 Following the experiment for the second approach we had the participant fill out a Google form with some survey questions to get a feel of their impressions. We asked "Is it clear to you what approach 2 does and its purpose?" in order to confirm that users understood the point of the application. We asked "Is it easy to perform the basic functions of approach 2" and "If you had to use approach 2 again would you need assistance or support?" to make sure that the usability was good for the second approach. We asked if the user felt that approach 2 made it easier to create teams and to rate the overall experience to make sure that the application was useful to the user. Finally we asked what improvements they suggested for the application. We made this an open ended question so we could get broad feedback about the application. 
 
-In approach 3, we created a list of teams, in which there are positions with required skills. Some positions are already applied and not available to other users. After users signing up to the application, they can edit their profiles and skills. When users want to join a team, they go to the teams page, which shows the basic condition of existing teams. Then users can choose from available positions according to their skills set in the profile. They can only applied for positions which are available and fitting for their skills since the applied button will not show up if a user doesn't meet the requirements. After joining a team, users go to the team information page to see who are their team members and the contact information. If users change their minds, they go to the teams page, quit from the current team and join another team. 
+In approach 3, we created a list of teams, in which there are positions with required skills. Some positions are already filled and not available to other users. After users sign up to the application, they can edit their profiles and skills. When users want to join a team, they go to the teams page, which shows the basic condition of existing teams. Then users can choose from available positions according to their skills set in the profile. They can only apply for positions which are available and fitting for their skills since the applied button will not show up if a user does not meet the requirements. After joining a team, users can go to the team information page to see who their team members are and their contact information. If users change their minds, they go to the teams page, quit from the current team and join another team. 
 
-After showing users the basic operations, we ask them to try the application then help filling up our questionnaire. The questionnaire evaluates whether the application achieves its purpose, its usability and the overall user experience. Also we compare the three approaches to find their pros and cons, to figure out which approach is the best.
+After showing users the basic operations, we asked them to try the application then fill up our questionnaire. The questionnaire evaluates whether the application achieves its purpose, its usability and the overall user experience. Also we compare the three approaches to find their pros and cons, to figure out which approach is the best.
 
 \subsection{Participants}
-We chose participants who were graduate students at North Carolina State University from the Software Engineering class. All participants came to in person sessions where we walked them through the applications in order to assess their feedback in person. 
+We chose participants who were graduate students at North Carolina State University from the Software Engineering class. All participants came to in-person sessions where we walked them through the applications in order to assess their feedback in person. 
 
 Before starting the demos, we wanted to collect background information about the participants. We asked them if they thought skill was an important factor in deciding a team's performance to which 96\% of respondents responded yes. The point of this question was to make sure that these participants shared our view that skills were one of the most important factors in developing a strong team since we based our entire applications around this idea. 
 
@@ -55,6 +60,12 @@ We also asked the participants if they had the ability to choose team members ba
 
 
 \section{Results}
+Approach one received massively positive response in every category of questions with almost all the evaluators endorsing the applications learn-ability, understandability and lauding the user experience. During the design phase one problem we thought about in approach one was that, if users were ready or not to contact the students found on the search page, as in, were they ready to put in such effort. To our surprise, all the evaluators responded to the above question with an affirmative, which strengthens the belief that people are ready to contact and maybe team up with people who they find on the application. 
+
+Although the response was mostly positive, a fifth of the evaluators felt that the application should also include a measure of a users expertise for a skill which could be represented by a rating of that skill. The evaluators also, raised the concern that they had no definitive way of knowing how good the person was in the skill which was mentioned by him. Similarly, some evaluators raised the concern that those people who have already teamed up with other people should not be shown the search page so that the users don't undergo the hassle of contacting a person who has already teamed up with someone else.
+
+Other suggestions made for the application by the evaluators were, including the LinkedIn and GitHub profile of the user, adding more information about the people such as their past experiences, interests, schedule timings, number of hours they can dedicate during a week, also adding an instructions page for the web site. One evaluator also suggested that the search should also be allowed by using a persons name and if an android or iOS app was present that would make the application more handy to use.
+
 In approach 2 the results of the timing activity were pretty much as expected. Out of 25 participants the time to sort the 20 users manually into balanced groups based off of their skills took an average of 3 minutes and 55 seconds. When logging into the application and selecting generate groups the participants took an average of 12.92 seconds to complete the activity. So it is significantly faster to let the computer do the sorting for you to a factor of about 18 times faster. 
 
 We were surprised to see that almost all of the manual responses had very similar group setups when the activity was complete. We think that it might have something to do with just going in order down the list filling in each group as you go. Unsurprisingly, this was very similar to the group structure the application took as well so the performance of each was comparable. The time difference is what really stands out in automating team creation.
@@ -77,7 +88,7 @@ Users' experience of approach 3 is good. All of the participants think this appr
     \label{app3.ov}
 \end{figure}
 
-We ask users questions about  which features they like in approach 3 (multiple choices). The result is showed in Fig.\ref{app3.gf}, Joining teams freely and A glance on teams information are the two most popular answers. Among all participants, over 80\%(20 of 25 participants) of them like these two features. The third popular answer is Offering contact information of team members, about 60\% users choose this feature. Quitting from a team and competing for positions in time is the least two popular features, there are over 50\% users like these features.
+We asked users questions about which features they liked in approach 3 (multiple choices). The result can be seen in Fig.\ref{app3.gf}. 'Joining teams freely' and 'A glance on teams information' were the two most popular answers. Among all participants, over 80\%(20 of 25 participants) of them like these two features. The third popular answer is 'Offering contact information of team members' with 60\% users choosing this feature. 'Quitting from a team' and 'Competing for positions in time' are the least two popular features, there are over 50\% users who liked these features.
 
 \begin{figure}[H]
     \centering
@@ -87,13 +98,24 @@ We ask users questions about  which features they like in approach 3 (multiple c
 \end{figure}
 
 \section{Discussion}
-After conducting user evaluations and collecting results we were able to arrive at a plethora of conclusions about our applications. The most obvious being that we have plenty of room for improvement on the layout and flow of our applications. When we were working on each application separately we all took different design paths which lead to some confusion among participants on how to use the various features. We were already aware of some smaller issues, since we only had a limited development time and a workable prototype was okay, but introducing unbiased users into the system revealed a lot more issues than what was on the surface. 
+After conducting user evaluations and collecting results we were able to arrive at a plethora of conclusions about our applications. The most obvious being that we have plenty of room for improvement on the layout and flow of our applications. As we were working on each application separately, we all took different design paths which lead to some confusion among participants on how to use the various features. We were already aware of some smaller issues, since we only had a limited development time and a workable prototype was okay, but introducing unbiased users into the system revealed a lot more issues than what was on the surface. 
 
 Within this section, we will discuss the key points about each approach especially the strengths and weaknesses of each one. In order to draw these conclusions, we will synthesis the data from the survey with the primary focus on the short answer responses, since that is where the respondents were allowed the most freedom in their opinions. 
 
 \subsection{Observations / Limitations}
 
 \subsection{Approach 1: Skill based searching}
+Approach 1 was a student faced approach. Through this approach the students had to create their profiles which had their skills such as Java, C++, etc. Thereby, other students of the class could search for the students in the database by using skills as keywords. They could make a search for single or multiple skills and the application returns a list of users which match the skills given. The list is represented in a descending fashion with the student who matched the maximum number of skills is at the top.
+
+Suggestions made by users which are explained in the Result section are mostly doable and would help the further growth of the application. The ratings for each skill can easily be included in the system. If included these ratings for each skill will be provided by the user, but even after adding this the question of authenticity of this information arises. There is no definitive way of knowing if the information provided by the user is true or not. Apart from the possibility that the user puts in false information in the system deliberately, it can also happen that the user is unaware of his/her level in a particular skill and unknowingly puts in false information. A possible solution to this problem could be to include the LinkedIn profile of the user so that it can be checked on the LinkedIn page that how many people have endorsed a particular skill of the user. But then again, even that is not a definitive way of examining the level of a person in a certain skill. Perhaps, it is still better to add the skill rating portion on the website as the user searching for a team mate can then choose between multiple people who claim to know a certain skill based on the skill rating they have provided. 
+
+Another suggestion made was to remove people from the search page as soon as they have teamed up with people. This can be easily included in the current code base and caters a very eminent need as if you look from the perspective of a user searching for a team mate, if she finds a potential candidate only to know that they have already teamed up, would be an effort in futile. By including this scenario, only people who are still looking for team mates would be shown and as soon as they find out team mates they would be removed from the search list.
+
+Other functionalities suggested such as the number of hours a person can dedicate in the project per week, previous projects, GitHub link, LinkedIn link, interests, etc can easily be included in the software. If the user has more information, s/he can make a better choice. This could certainly be done.
+
+In future an android and iOS app can also be made for this application but I still feel that the web application would be a better platform for this application. Consider this use case, a user makes a search for a potential team mate on the application and now wants to see the the Github or Linkedin profile of the user. As soon as the user clicks on the respective link he is guided to their respective URL's and now he might have to log in to linkedin which adds an extra overhead(if it was a laptop, people are generally already logged into their accounts such as linkedin and github), moreover if has opened the github page and wants to open a repository, it would be very difficult for him to check out the code on a mobile phone. Furthermore, a user would use this type of application only twice or thrice in a semester so it does not make any sense that the user would keep this application downloaded as it is just using space and not being used, hence web platform would be better and what can be done is that made sure that the application is mobile and tablet friendly just in case if the user still wants to use such platforms.
+
+Overall, a third of the evaluators were in favour of using approach 1 as an application which could facilitate team making as it was pretty straight forward to use and it gave more details about a persons skills unlike approach 2 and 3 which gave an high level perception of a persons skill. Also, the evaluators who voted approach 1 as the best one said that because they felt that knowing precisely what skills a person processes will help them create and balanced team as they would know beforehand which team member is bringing in what skill to the table. So, for people who feel the need of adding a team member to their team by gauging the skill set of that person, approach one is the way to go. 
 
 \subsection{Approach 2: Automated Sorting}
 Approach 2 was the most hands-off approach for the user since the machine does most of the work on the user's behalf. This made it more difficult to give a traditional tour of the application since there was pretty much only one button for the user to press when acting as the role of the professor. However, the results were exactly what was expected. The application successfully created balanced teams at the push of a button that were on par with the teams that were formed manually by survey participants and in a fraction of the time. 
@@ -109,7 +131,7 @@ Overall, the second approach was pretty popular among survey respondents, there 
 \subsection{Approach 3: Joining existing teams}
 Approach 3 is similar to the course selection process in college. Users must satisfy the skill requirement of specific position. The positions in a team is limited, so if one team is full, users have to choose other teams. 
 
-Since the skills and positions in each team are fixed, this approach is designed to guarantee creating skill-balanced teams, which is the primarily concern of our project. But few of the users think it is not easy to create skill-balance teams. We want to figure out the reason. For approach 3 evaluation, we focus on:(1) how is user experience (2) what happens during team formation affect user experience and (3) what changes we can make to improve it.
+Since the skills and positions in each team are fixed, this approach is designed to guarantee creating skill-balanced teams, which is the primarily concern of our project. But few of the users think it is not easy to create skill-balanced teams. We want to figure out the reason. For approach 3 evaluation, we focus on:(1) how is user experience (2) what happens during team formation affect user experience and (3) what changes we can make to improve it.
 
 According to the survey, we find that for the users who choose approach 3, most of them give two main reasons. One is this approach offers information about overall teams condition and team mates' contact information. In order to create user-satisfied teams, users need information about current teams formation, how many positions left, what positions they can compete for and members' details in each team. These information help them making better decisions when joining or quitting a team. 
 
@@ -138,18 +160,87 @@ In all, approach 3 get good feedback in evaluation because it offers convenience
 
 
 \subsection{Best Approach}
-\blindtext
+To understand which approach users liked the most, we asked two questions. In first question, we asked which idea do they like the most. Here, searching for team members came out at top with 44\%. Randomly assigned team was least favorite with only 24\% users choosing that. These were what we did expect.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{image/ChoosingMethod.PNG}
+    \caption{Which method would you prefer to build a team?}
+\end{figure}
 
+However, when we asked which approach did they like the most, result was evenly divided. Since we had three different and independent approaches, we were expecting one to be better than other. Also, as our evaluators were fellow SE students, we expected approach1 or approach3 to be winner. Both these approaches were student based and approach2 was professor based. We thought that approach2 would be favored only by professors who like dividing the team randomly. Surprisingly, all three approaches got similar amount of votes as seen in fig. \ref{bestapp.gf}. This further reiterates our belief that if skills are divided evenly among teams, students are willing to work with new people as well. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{image/ChoosingApproach.PNG}
+    \caption{Which approach do you think was the best?}
+    \label{bestapp.gf}
+\end{figure}
 
 \section{Conclusion}
-All three of our approaches were different and each of them assisted users to form better teams in their own. While approach1 made the owner of the project in driving seat, approach3 gave the users option to join a team. Approach2 would be ideal for professors who want students to have experience of working with random people. Though students are not appreciative of this idea, this is what happens in office or post-school term. Since we had three different and independent approaches, we were expecting one to be better than other. Also, as our evaluators were fellow SE students, we expected approach1 or approach3 to be winner. Both these approaches were student based and approach2 was professor based. We thought that approach2 would be favored only by professors who like dividing the team randomly. Surprisingly, all three approaches got similar amount of votes. This further reiterates our belief that if skills are divided evenly among teams, students are willing to work with new people as well.
+All three of our approaches were different and each of them assisted users to form better teams in their own. While approach1 made the owner of the project in driving seat, approach3 gave the users option to join a team. Approach2 would be ideal for professors who want students to have experience of working with random people. Though students are not appreciative of this idea, this is what happens in post-school world or in offices. Since our target was to build a working and presentable prototype, we did achieve that target. But there is still lot of room left for improvement. 
 
-//Will be adding more lines based on individual approaches 
 
 \section{Future Work}
 Since we did not have any clear winner among three approaches, we believe that best way forward would be to combine all three approaches into single application. All three approaches already have common starting point, i.e., signing up and adding your skill sets. We could also ask users to provide their LinkedIn profile. Next step would be to ask if the user wants to add new project or check existing ones. If he decides to create new project, he can list that as open or close. If it is a closed project, then he needs to contact other persons for forming the team (approach1). An open project would mean that other users can see that project and apply if they have desired skills (approach3). This would be same as user selecting 'check existing projects' and then joining team. For approach2, user needs to join a list shared by professor. Professor can then divide the list into further teams after a deadline (approach2). Having roles defined will make sure that only professor is able to generate teams. Currently, all the users have the ability to generate teams. So one single application can cover all the approaches.  
 
 Though our application is targeted for students and professors, it can easily be extended to cover professional employees and their managers as well. Approach3 would be ideal for crowd sourcing. User would create project and others would be able to join the project if they have desired skills. Since approach3 does not give the project owner any control of who joins the team, it would be best suited for crowd sourcing. 
 
+One of things which we learned during evaluation process was that our presence in the same room while evaluators write responses made them lean towards more positive feedback than we would have otherwise gotten. Though the number and graphs can be better because of that, but, we were deprived of honest feedback which we could have used for improving our product. Hence, in future, we will work more on getting honest feedback as well.  
+
+
+\clearpage
+
+\textbf{Chits}
+
+bjksauio
+
+blhhieii
+
+cfmqoaee
+
+cgdteiai
+
+chmyaoao
+
+cjjpouue
+
+ckmfuoii
+
+clmbaaoe
+
+cmmdoiue
+
+dcbviuai
+
+dclxuauo
+
+ddmwauii
+
+dfhcuoea
+
+dgjdeaiu
+
+dkjpeiao
+
+dmbwiiie
+
+dmhcieao
+
+fbkbeiou
+
+fcjcoeao
+
+fdffoaia
+
+ffhxoeou
+
+fljnueii
+
+fmhzoaio
+
+gbkdoiee
+
+gcgliauu
+
+Total: 25
 
 \end{document}
