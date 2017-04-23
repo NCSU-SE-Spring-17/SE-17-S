@@ -263,13 +263,19 @@ def launchDump():
 
   page = 1
   milestones = []
+
+  firstWarning = False
+  secondWarning = False
+  
   print('getting records from '+repo)
   while(True):
     url = 'https://api.github.com/repos/'+repo+'/milestones/' + str(page)
     doNext = dumpMilestone(url, milestones, token)
+    if not doNext and firstWarning : secondWarning = True
+    if not doNext : firstWarning = True
     print("milestone "+ str(page))
     page += 1
-    if not doNext : break
+    if not doNext and secondWarning: break
   page = 1
   issues = dict()
   while(True):
