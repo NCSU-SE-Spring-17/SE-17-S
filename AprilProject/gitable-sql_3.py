@@ -82,7 +82,10 @@ def dumpCommit1(u,commits,token):
   if not w: return False
   for commit in w:
     sha = commit['sha']
-    user = commit['author']['login']
+    if commit['author'] is not None: 
+          user = commit['author']['login']
+    else:
+          user = "Unknown"
     time = secs(commit['commit']['author']['date'])
     message = commit['commit']['message']
     commitObj = L(sha = sha,
