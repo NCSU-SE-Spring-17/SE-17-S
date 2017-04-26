@@ -23,21 +23,110 @@ Email: \IEEEauthorrefmark{1}magoff2@ncsu.edu \\
 \maketitle
 
 \section{Collections}
-\blindtext
+
 
 \section{Anonymization}
-\blindtext
+
 \section{Data}
-\blindtext
+
 \section{Data Samples}
-\blindtext
+
 \section{Features}
-\blindtext
+This section will describe the various metrics we want to observe about a team to form a hypothesis about their performance. If all of these different symptoms look like they are in good shape then the project is probably going along smoothly. 
+
+\subsection{Comments per Issue}
+One feature we were interested in looking into was the number of comments per issue. The reason we wanted to look at this issue was to judge the level of collaboration between team members. If there were few comments then problems may not have been resolved in a proper manner. When paired with the time issues remain open we can gather even more insight. For instance, if an issue is open with one or less comments over an extended period of time then we can see that there is a problem with development. Another possible situation could be that the item is not a high priority, though a good team would probably leave a comment or label to make it as such. 
+
+\subsection{Issue Duration}
+Another important feature on a repository is the duration an issue remains open. Issues that have not been resolved for a long period of time may indicate features that have not been properly developed or bugs that have persisted for too long in the system. If these types of situations are not cleared up in a timely manner it can have a cumulative effect on an application. We hope to find that issues are resolved within a week of being found. This would indicate an active developer community that can quickly resolve errors in a system. If issues are left open for a longer period of time then the developers are not keeping up with the problems in the application which, over time, may lead to larger problems within the system. 
+
+
+
+
+
+
 \section{Results}
-\blindtext
+\subsection{Comments per Issue}
+When pulling the number of comments per issue on the same teams we found that the average number of comments were surprisingly low across the teams as shown in figure \ref{comments_issue}. When looking at the box and whisker plot of the teams there was a telling spread of different stories across the teams. For example the majority of team 1's issues had less than 7 comments. One explanation to the lack of comments was that issues were resolved quickly and closed. Team 1 also had a lot of outlier issues that had a lot more comments than the rest of the issues. The deviance of the norm on these issues could be attributed to discussion threads that take place on the issues. It is common among groups to have a place to discuss next steps or debate over a new feature or design idea.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{../AprilProject/pic/comments_per_issue.png}
+    \caption{Comments per Issue across Teams}
+    \label{comments_issue}
+\end{figure}
+
+Judging across all of the groups team 1 and 3 look the healthiest and team 2 looks like it is in trouble. The number of comments average is very close to zero and they did not have a single issue that contained more than 1 comment. The lack of discussion on issues indicates that there was a poor level of communication across the team. There could be some explanations to the lack of comments on issues, like another external communication channel outside of GitHub. It is possible that team 2 mainly communicated on the side and did not feel the need to document everything in issues. While this feature alone is not enough to indicate a bad team, when combined with other bad signs it could paint a more complete picture. 
+
+\subsection{Issue Duration}
+Across the teams the results were somewhat surprising when it came to issue duration, seen in figure \ref{issue_duration}. We predicted that issues would on average be open for about a week, which turned out to be mostly true except for team 3. Team 2 had an average open time of only a couple of days while team 1 had issues open for an average of 6 days. There are a lot of outlier issues on this figure though. When it comes to outlier issues, team 1 is the biggest offender. They had 7 issues that were open 30 days or longer. Surprisingly, the number of outliers did not seem to pull the average close time past a week so they must have had plenty of issues that were quickly resolved as well. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{../AprilProject/pic/issues_duration.png}
+    \caption{Duration of Issues}
+    \label{issue_duration}
+\end{figure}
+
+With teams 1 and 2 quickly resolving issues it seems to indicate that they have healthier projects when it comes to turnaround on issues. Team 3 had the biggest problem with average duration. They had issues open an average of a week and a half. 
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{../AprilProject/pic/issues_timeout.png}
+    \caption{Issue Timeout}
+    \label{issue_timeout}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{../AprilProject/pic/Num_comments_issue.png}
+    \caption{Number of comments per Issue}
+    \label{num_comments}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{../AprilProject/pic/team1_milestone_time.png}
+    \caption{Team 1 Milestone Time}
+    \label{team1_milestone_time}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{../AprilProject/pic/team2_milestone_time.png}
+    \caption{Team 2 Milestone Time}
+    \label{team2_milestone_time}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{../AprilProject/pic/team3_milestone_time.png}
+    \caption{Team 3 Milestone Time}
+    \label{team3_milestone_time}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{../AprilProject/pic/team1_user_issue_comments.png}
+    \caption{Team 1 User Issue Comments}
+    \label{team1_issue_comment}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{../AprilProject/pic/team2_user_issue_comments.png}
+    \caption{Team 2 User Issue Comments}
+    \label{team2_issue_comment}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{../AprilProject/pic/team3_user_issue_comments.png}
+    \caption{Team 3 User Issue Comments}
+    \label{team3_issue_comment}
+\end{figure}
 \section{Bad Smells Detector}
-\blindtext
 \section{Early Warning}
-\blindtext
 
 \end{document}
