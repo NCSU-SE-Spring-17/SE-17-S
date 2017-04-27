@@ -40,6 +40,9 @@ One feature we were interested in looking into was the number of comments per is
 \subsection{Issue Duration}
 Another important feature on a repository is the duration an issue remains open. Issues that have not been resolved for a long period of time may indicate features that have not been properly developed or bugs that have persisted for too long in the system. If these types of situations are not cleared up in a timely manner it can have a cumulative effect on an application. We hope to find that issues are resolved within a week of being found. This would indicate an active developer community that can quickly resolve errors in a system. If issues are left open for a longer period of time then the developers are not keeping up with the problems in the application which, over time, may lead to larger problems within the system. 
 
+\subsection{Issue open time outside of milestone deadline}
+On GitHub, issues are usually assigned to milestones. This allows developers to group similar functionality together for a release. One aspect that observes how issues and milestones are connected is whether the issue was closed before the deadline of the milestone. We predict that a good group will have most of their issues close before the due date for the milestone. 
+
 
 
 
@@ -70,6 +73,8 @@ Across the teams the results were somewhat surprising when it came to issue dura
 
 With teams 1 and 2 quickly resolving issues it seems to indicate that they have healthier projects when it comes to turnaround on issues. Team 3 had the biggest problem with average duration. They had issues open an average of a week and a half. 
 
+\subsection{Issues closed outside of milestone due date}
+When observing the issue close date in reference to its milestone we were not very surprised by the results. The median issue was closed on the milestone due date with many of them being closed before the due date. The habits of team 2 and 3 tended to close most or almost all of their issues on the deadline of the associated milestone. Most likely as a way to clean things up after finishing that particular milestone. Team 1 had a much more varied level of issue close dates. Team 1 had most of it's issues closed before a milestone due date, however there were a good number of which that were closed after the milestone was due. 
 
 \begin{figure}[H]
     \centering
@@ -78,12 +83,8 @@ With teams 1 and 2 quickly resolving issues it seems to indicate that they have 
     \label{issue_timeout}
 \end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=9cm]{../AprilProject/pic/Num_comments_issue.png}
-    \caption{Number of comments per Issue}
-    \label{num_comments}
-\end{figure}
+Except for a few outlier issues that were closed long after the milestone due date, all of the teams were pretty healthy regarding this metric. Based off of the data in figure \ref{issue_timeout} we think that issues were not often closed in a timely manner or the groups were big on procrastinating until the deadline. 
+
 
 \begin{figure}[H]
     \centering
