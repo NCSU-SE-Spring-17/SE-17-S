@@ -26,8 +26,20 @@ Email: \IEEEauthorrefmark{1}magoff2@ncsu.edu \\
 
 
 \section{Anonymization}
+In order to protect the identity of our peers we anonomized the data we pulled from the various GitHub repositories. The anonomization was performed both on the group name and the users themselves so no connection could be made back to the individuals. When gathering data each new group that was added to our databases was assigned an id number. Additionally each new user that appeared in an interaction was also assigned an id number. With personal data pulled away we can be assured that it is safe to objectively analyze the repository data without fear of offending any particular group. 
 
-\section{Data}
+\section{Data Summary}
+We have pulled data across all of the groups in the software engineering course but we decided to focus on the 3 groups with the most active repository. Below is a table of summary information about each team. 
+
+
+\begin{tabular}{c|c|c|c|c}
+    Team & Commits &  Issues & Milestones & Comments \\
+    1 & 202 & 49 & 8 & 140 \\
+    2 & 138 & 27 & 5 & 13 \\
+    3 & 60 & 32 & 4 & 72 \\
+\end{tabular}
+
+It is important to note that the professor asked students to try to use GitHub as their main source of communication throughout the semester in order to generate data for this project. However, upon inspection of the data it seems that some groups talked much more than others. Team 1 maintained a high number across the board for the project by maintaining a high frequency of commits at 202 where the other groups did not keep such a high number. Perhaps team 1 prioritized frequent smaller changes while other teams preferred to make large changes at once. Another important area to judge the active level of the repository are comments. A repository with a lot of comments would imply that there was enough communication to successfully get a job done. Once again team 1 had the most with 140 comments. Team 2 had a surprising 13 comments, which almost surely implies that the team was communiciating mainly outside of GitHub. The number of issues were fairly similar among teams, with 1 having the most and 2 having the least. It could be a case of breaking issues down into smaller pieces rather than big features to implement. 
 
 \section{Data Samples}
 
@@ -85,12 +97,20 @@ When observing the issue close date in reference to its milestone we were not ve
 
 Except for a few outlier issues that were closed long after the milestone due date, all of the teams were pretty healthy regarding this metric. Based off of the data in figure \ref{issue_timeout} we think that issues were not often closed in a timely manner or the groups were big on procrastinating until the deadline. 
 
+\subsection{Milestone Timeline}
+While observing the milestone timeline it was observed that out of the three teams, Team3 did not create enough issues throughout the project and did not set due dates for those milestones as well which is quite different to what was observed for the other two teams. 
+
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=9cm]{../AprilProject/pic/team1_milestone_time.png}
     \caption{Team 1 Milestone Time}
     \label{team1_milestone_time}
 \end{figure}
+
+Team1 created the most milestones and set a due date for almost all of them. Team2 as well created milestones throughout the project and set due dates for them.
+
+
 
 \begin{figure}[H]
     \centering
@@ -99,12 +119,19 @@ Except for a few outlier issues that were closed long after the milestone due da
     \label{team2_milestone_time}
 \end{figure}
 
+
+Regarding the closing time of the milestones across all teams it was observed that almost all milestones were closed after the due date set for them. For team 1, only one milestone was closed. Team 1 and 2 closed almost all of their milestones.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=9cm]{../AprilProject/pic/team3_milestone_time.png}
     \caption{Team 3 Milestone Time}
     \label{team3_milestone_time}
 \end{figure}
+
+\subsection{Issues assigned to member having comments}
+
+
 
 \begin{figure}[H]
     \centering
