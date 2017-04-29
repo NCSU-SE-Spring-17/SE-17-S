@@ -132,7 +132,7 @@ The total distribution of issue duration for the entire class can be found in fi
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=9cm]{../AprilProject/pic/distribution/issue duration distribution total.png}
+    \includegraphics[width=9cm]{../AprilProject/pic/distribution/issue_duration_distribution_total.png}
     \caption{Duration of Issues Distribution across all Teams}
     \label{issue_duration_total}
 \end{figure}
@@ -141,7 +141,7 @@ While the overall picture of issue duration was very telling, we wanted to focus
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=9cm]{../AprilProject/pic/distribution/issue duration distribution team1.png}
+    \includegraphics[width=9cm]{../AprilProject/pic/distribution/issue_duration_distribution_team1.png}
     \caption{Duration of Issues Distribution for Team 1}
     \label{issue_duration_team1}
 \end{figure}
@@ -150,7 +150,7 @@ Once again, team 2 seems to have more unhealthy behavior as seen in figure \ref{
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=9cm]{../AprilProject/pic/distribution/issue duration distribution team2.png}
+    \includegraphics[width=9cm]{../AprilProject/pic/distribution/issue_duration_distribution_team2.png}
     \caption{Duration of Issues Distribution for Team 2}
     \label{issue_duration_team2}
 \end{figure}
@@ -159,7 +159,7 @@ The most healthy distribution for issue duration was team 3. In figure \ref{issu
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=9cm]{../AprilProject/pic/distribution/issue duration distribution team3.png}
+    \includegraphics[width=9cm]{../AprilProject/pic/distribution/issue_duration_distribution_team3.png}
     \caption{Duration of Issues Distribution for Team 3}
     \label{issue_duration_team3}
 \end{figure}
@@ -221,8 +221,7 @@ Except for a few outlier issues that were closed long after the milestone due da
 
 \subsection{Milestone Timeline}
 
-While observing the milestone timeline it was observed that out of the three teams, Team3 did not create enough issues throughout the project and did not set due dates for those milestones as well which is quite different to what was observed for the other two teams. 
-
+While observing the milestone timeline, it was observed that out of the three teams, Team3 did not create enough issues throughout the project and did not set due dates for those milestones as well which is quite different to what was observed for the other two teams. This is pretty bad behaviour from team3 as it shows a lack of proper procedure through which the project was implemented. Team3 had no way of tracking their progress or even making a burn down chart for tasks that need to be accomplished for the project. 
 
 \begin{figure}[H]
     \centering
@@ -231,8 +230,7 @@ While observing the milestone timeline it was observed that out of the three tea
     \label{team1_milestone_time}
 \end{figure}
 
-Team1 created the most milestones and set a due date for almost all of them. Team2 as well created milestones throughout the project and set due dates for them.
-
+Team1 created the most milestones and set a due date for almost all of them but could only close one issue on the due date, this goes on to show that 
 
 
 \begin{figure}[H]
@@ -242,8 +240,10 @@ Team1 created the most milestones and set a due date for almost all of them. Tea
     \label{team2_milestone_time}
 \end{figure}
 
+Team2 as well created milestones throughout the project and set due dates for them.
 
-Regarding the closing time of the milestones across all teams it was observed that almost all milestones were closed after the due date set for them. For team 1, only one milestone was closed. Team 1 and 2 closed almost all of their milestones.
+
+
 
 \begin{figure}[H]
     \centering
@@ -252,9 +252,10 @@ Regarding the closing time of the milestones across all teams it was observed th
     \label{team3_milestone_time}
 \end{figure}
 
+Regarding the closing time of the milestones across all teams it was observed that almost all milestones were closed after the due date set for them. For team 3, only one milestone was closed. Team 1 and 2 closed almost all of their milestones.
 
 \subsection{Issues assigned to member having comments}
-
+While observing the issues assigned to the users of a specific team, it was observed that there was a lot of disparity in the number of issues assigned between users in team2 and team3, whereas in team1 issues were assigned to every member, though there was some difference among the number of issues assigned among users.
 
 \begin{figure}[H]
     \centering
@@ -263,12 +264,16 @@ Regarding the closing time of the milestones across all teams it was observed th
     \label{team1_issue_comment}
 \end{figure}
 
+In team1 a lot of issues were created and although the distribution among the users was not equal still a good number of issues were assigned to each user. Regarding the comments made by those user it was observed that none of the users commented on all of the issues, which is a bad thing because the comments on the issues show the user's participation in that issue, it also shows that the user has acknowledged that issue and it informs the other team members that the user is working on it or the status of the issue, that is, how far along is the user is resolving that issue and if the user has faced any roadblocks in resolving the issue.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=9cm]{../AprilProject/pic/team2_user_issue_comments.png}
     \caption{Team 2 User Issue Comments}
     \label{team2_issue_comment}
 \end{figure}
+
+Again for team2, it was observed that two users (2 & 4) were assigned a lot less issues than others and also they never commented on the issues assigned to them. This kind of reflects on the improper work distribution among team members.
 
 \begin{figure}[H]
     \centering
@@ -277,11 +282,10 @@ Regarding the closing time of the milestones across all teams it was observed th
     \label{team3_issue_comment}
 \end{figure}
 
+The behaviour of team3 was kind of similar to team2, there was improper distribution of issues among team members, with members 4 and 5 with a lot less issues and moreover user4 never commented on the issues assigned to him or her, also, other users also commented on almost half the number of issues assigned to them. This shows a general lack of participation and promptness among users which is a bad thing.
+
 \subsection{Percent commits by user}
 When observing the percent commits by the users, it was seen that in none of the three teams the number of commits between the users were balanced. The number of commits can provide a direct correlation with the contribution made by the users but a better metric for contribution could be the number of lines committed. So, it could have happened that the users could have made a few commits but would have committed more lines of code thereby making their contribution more than what meets the eye. But, if we do a deeper analysis it can also be observed that the number of lines could also be a superficial metric to measure contribution of a team member, it could also happen that the functionality implemented by a member could have been difficult to implement and although it took less number of lines to implement it took more time to implement and someone who wrote more lines of code could have been implementing an easy functionality, but then again easy and difficult are subjective to the people implementing it and something which seems difficult to someone could be easy for someone else. 
-
-Here out of the three teams only team1 had commits from all the members and team2 and team3 had one and two members respectively who did not make any commits. This goes on to show their lack of participation in the project. Also, in all the three teams it was observed that there was one person who 
-
 
 \begin{figure}[H]
     \centering
@@ -289,6 +293,8 @@ Here out of the three teams only team1 had commits from all the members and team
     \caption{Team 1 Percent of Commits by User}
     \label{team1_percent_commit}
 \end{figure}
+
+But, during the project if any member does not make any commits, thats just lack of participation from that member.
 
 \begin{figure}[H]
     \centering
@@ -304,7 +310,10 @@ Here out of the three teams only team1 had commits from all the members and team
     \label{team3_percent_commit}
 \end{figure}
 
+Here out of the three teams only team1 had commits from all the members and team2 and team3 had one and two members respectively who did not make any commits. This goes on to show their lack of participation in the project. Also, in all the three teams it was observed that there was one person who made the most commits also the commit made by that person is almost double to the number of commits made by the person who made the second highest number of commits, this goes on to show that in all the teams there was one person who did majority of the coding or at least committed a major portion of the code or was most active in updating papers, materials and code on the repository.
+
 \section{Bad Smells Detector}
+
 \section{Early Warning}
 
 \end{document}
