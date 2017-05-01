@@ -4,11 +4,11 @@
 \usepackage{float}
 
 \begin{document}
-\title{TeamFinder: An Application for Building Skill Based Teams}
+\title{Analyzing Class Github Repositories for Bad Smells}
 
 
 \author{\IEEEauthorblockN{Michael Goff\IEEEauthorrefmark{1},
-Shashank Jha\IEEEauthorrefmark{2},
+Shashank Jha\IEEEauthorrefmark{2}
 Jingjuan Deng\IEEEauthorrefmark{3} and
 Bhaskar Sinha\IEEEauthorrefmark{4}}
 \IEEEauthorblockA{Department of Computer Science, North Carolina State University, \\
@@ -22,11 +22,17 @@ Email: \IEEEauthorrefmark{1}magoff2@ncsu.edu \\
 % make the title area
 \maketitle
 
+\section{Introduction}
+Different groups have different styles of working, each leading to different levels of success. As we are done with project 1 for CSC510, we have data from 10 teams for analyzing the patterns seen in different groups. The target of this analysis is to study about those patterns, detect bad smells and try to come up with early warning so that such bad smells could be avoided. Also, when we analyze different sets of data, it will help us to study where the project can go wrong direction. Hence, we should have some idea of how to avoid such situations in future.    
+
 \section{Collections}
+In order to collect the data for analysis, we used GitHub APIs. Rather than building new program from scratch, we used one of the scripts provided in the sample report from 2015 as we wanted to spend more time in analyzing the data rather than learning about GitHub APIs and how to use it. However, we had to tweak few things in that script for better data collection. For example, we noticed that if the milestones are numbered non-sequentially, the script would not fetch all the milestones. Similarly, if someone pushes the code without configuring their email id locally, author details are set to null. Hence, while fetching and storing the data, it would create problems. So, a few minor changes were required before we could use it to fetch the data for analysis.
+
+After the data has been fetched from GitHub for a particular repository, the script will store it in a SQLite database file (*.db). The major advantage of using a database file was easy sharing of the information through slack, email, etc and the option of querying it offline as well.
 
 
 \section{Anonymization}
-In order to protect the identity of our peers we anonomized the data we pulled from the various GitHub repositories. The anonomization was performed both on the group name and the users themselves so no connection could be made back to the individuals. When gathering data each new group that was added to our databases was assigned an id number. Additionally each new user that appeared in an interaction was also assigned an id number. With personal data pulled away we can be assured that it is safe to objectively analyze the repository data without fear of offending any particular group. 
+In order to protect the identity of our peers we anonomized  the data we pulled from the various GitHub repositories. The anonomization was performed both on the group name and the users themselves so no connection could be made back to the individuals. When gathering data each new group that was added to our databases was assigned an id number. Additionally each new user that appeared in an interaction was also assigned an id number. With personal data pulled away we can be assured that it is safe to objectively analyze the repository data without fear of offending any particular group. 
 
 \section{Data Summary}
 We have pulled data across all of the groups in the software engineering course but we decided to focus on the 3 groups with the most active repository. Below is a table of summary information about each team. 
@@ -221,7 +227,7 @@ Except for a few outlier issues that were closed long after the milestone due da
 
 \subsection{Milestone Timeline}
 
-While observing the milestone timeline, it was observed that out of the three teams, Team3 did not create enough issues throughout the project and did not set due dates for those milestones as well which is quite different to what was observed for the other two teams. This is pretty bad behaviour from team3 as it shows a lack of proper procedure through which the project was implemented. Team3 had no way of tracking their progress or even making a burn down chart for tasks that need to be accomplished for the project. 
+While observing the milestone timeline, we found that out of the three teams, Team 3 did not create enough issues throughout the project and did not set due dates for those milestones as well which is quite different to what was observed for the other two teams. This is pretty bad behaviour from team 3 as it shows a lack of proper procedure through which the project was implemented. Team 3 had no way of tracking their progress or even making a burn down chart for tasks that need to be accomplished for the project. 
 
 \begin{figure}[H]
     \centering
@@ -230,7 +236,7 @@ While observing the milestone timeline, it was observed that out of the three te
     \label{team1_milestone_time}
 \end{figure}
 
-Team1 created the most milestones and set a due date for almost all of them but could only close one issue on the due date, this goes on to show that 
+Team 1 created the most milestones and set a due date for almost all of them but could only close one issue on the due date, this goes on to show that they underestimated the time that they needed to complete those milestones, which reflects badly on them.
 
 
 \begin{figure}[H]
@@ -240,10 +246,7 @@ Team1 created the most milestones and set a due date for almost all of them but 
     \label{team2_milestone_time}
 \end{figure}
 
-Team2 as well created milestones throughout the project and set due dates for them.
-
-
-
+Team 2 as well created milestones throughout the project and set due dates for them which shows planning on their part. They had broken down the project into milestones and set due dates for all which is a good thing.
 
 \begin{figure}[H]
     \centering
@@ -252,10 +255,10 @@ Team2 as well created milestones throughout the project and set due dates for th
     \label{team3_milestone_time}
 \end{figure}
 
-Regarding the closing time of the milestones across all teams it was observed that almost all milestones were closed after the due date set for them. For team 3, only one milestone was closed. Team 1 and 2 closed almost all of their milestones.
+Regarding the closing time of the milestones across all teams it was observed that almost all milestones were closed after the due date set for them. For team 3, only one milestone was closed. Team 1 and 2 closed almost all of their milestones, which shows that even though they were late, they were tracking the progress of their project and could close the milestones, but they definitely underestimated the time needed to complete the milestones.
 
 \subsection{Issues assigned to member having comments}
-While observing the issues assigned to the users of a specific team, it was observed that there was a lot of disparity in the number of issues assigned between users in team2 and team3, whereas in team1 issues were assigned to every member, though there was some difference among the number of issues assigned among users.
+While observing the issues assigned to the users of a specific team, it was observed that there was a lot of disparity in the number of issues assigned between users in team 2 and team 3, whereas in team 1 issues were assigned to every member, though there was some difference among the number of issues assigned among users.
 
 \begin{figure}[H]
     \centering
@@ -264,7 +267,7 @@ While observing the issues assigned to the users of a specific team, it was obse
     \label{team1_issue_comment}
 \end{figure}
 
-In team1 a lot of issues were created and although the distribution among the users was not equal still a good number of issues were assigned to each user. Regarding the comments made by those user it was observed that none of the users commented on all of the issues, which is a bad thing because the comments on the issues show the user's participation in that issue, it also shows that the user has acknowledged that issue and it informs the other team members that the user is working on it or the status of the issue, that is, how far along is the user is resolving that issue and if the user has faced any roadblocks in resolving the issue.
+In team 1 a lot of issues were created and although the distribution among the users was not equal still a good number of issues were assigned to each user. Regarding the comments made by those user it was observed that none of the users commented on all of the issues, which is a bad thing because the comments on the issues show the user's participation in that issue, it also shows that the user has acknowledged that issue and it informs the other team members that the user is working on it or the status of the issue, that is, how far along is the user is resolving that issue and if the user has faced any roadblocks in resolving the issue.
 
 \begin{figure}[H]
     \centering
@@ -273,7 +276,7 @@ In team1 a lot of issues were created and although the distribution among the us
     \label{team2_issue_comment}
 \end{figure}
 
-Again for team2, it was observed that two users (2 & 4) were assigned a lot less issues than others and also they never commented on the issues assigned to them. This kind of reflects on the improper work distribution among team members.
+Again for team 2, it was observed that user 2 was assigned a lot less issues than others and also they never commented on the issue assigned to them. This kind of reflects on the improper work distribution among team members. Also, fig. \ref{team2_issue_comment} shows 4 users but in reality there were only 3 members in team 2 and the 4th member shown in the diagram is a zombie member(extra users in database), but that can be ignored.
 
 \begin{figure}[H]
     \centering
@@ -282,38 +285,101 @@ Again for team2, it was observed that two users (2 & 4) were assigned a lot less
     \label{team3_issue_comment}
 \end{figure}
 
-The behaviour of team3 was kind of similar to team2, there was improper distribution of issues among team members, with members 4 and 5 with a lot less issues and moreover user4 never commented on the issues assigned to him or her, also, other users also commented on almost half the number of issues assigned to them. This shows a general lack of participation and promptness among users which is a bad thing.
+The behaviour of team 3 was kind of similar to team 2, there was improper distribution of issues among team members, with members 2 and 3 with a lot less, also, other users also commented on almost half the number of issues assigned to them. This shows a general lack of participation and promptness among users which is a bad thing. Here as well user 4 and 5 depicted in fig. \ref{team3_issue_comment} are zombie users.
 
 \subsection{Percent commits by user}
-When observing the percent commits by the users, it was seen that in none of the three teams the number of commits between the users were balanced. The number of commits can provide a direct correlation with the contribution made by the users but a better metric for contribution could be the number of lines committed. So, it could have happened that the users could have made a few commits but would have committed more lines of code thereby making their contribution more than what meets the eye. But, if we do a deeper analysis it can also be observed that the number of lines could also be a superficial metric to measure contribution of a team member, it could also happen that the functionality implemented by a member could have been difficult to implement and although it took less number of lines to implement it took more time to implement and someone who wrote more lines of code could have been implementing an easy functionality, but then again easy and difficult are subjective to the people implementing it and something which seems difficult to someone could be easy for someone else. 
+When observing the percent commits by the users, it was seen that in none of the three teams the number of commits between the users were balanced. The number of commits can provide a direct correlation with the contribution made by the users but a better metric for contribution could be the number of lines committed. So, it could have happened that the users could have made a few commits but would have committed more lines of code thereby making their contribution more than what meets the eye. Although we can fetch the number of lines from Github, but, if we do a deeper analysis it can be observed that the number of lines could also be a superficial metric to measure contribution of a team member, it could also happen that the functionality implemented by a member could have been difficult to implement and although it took less number of lines to implement it took more time to implement and someone who wrote more lines of code could have been implementing an easy functionality, but then again easy and difficult are subjective to the people implementing it and something which seems difficult to someone could be easy for someone else. 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=9cm]{../AprilProject/pic/users commit percentage team1.png}
+    \includegraphics[width=9cm]{../AprilProject/pic/users_commit_percentage_team1.png}
     \caption{Team 1 Percent of Commits by User}
     \label{team1_percent_commit}
 \end{figure}
 
-But, during the project if any member does not make any commits, thats just lack of participation from that member.
+But, during the project if any member does not make any commits, that shows lack of participation from that member.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=9cm]{../AprilProject/pic/users commit percentage team2.png}
+    \includegraphics[width=9cm]{../AprilProject/pic/users_commit_percentage_team2.png}
     \caption{Team 2 Percent of Commits by User}
     \label{team2_percent_commit}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=9cm]{../AprilProject/pic/users commit percentage team3.png}
+    \includegraphics[width=9cm]{../AprilProject/pic/users_commit_percentage_team3.png}
     \caption{Team 3 Percent of Commits by User}
     \label{team3_percent_commit}
 \end{figure}
 
-Here out of the three teams only team1 had commits from all the members and team2 and team3 had one and two members respectively who did not make any commits. This goes on to show their lack of participation in the project. Also, in all the three teams it was observed that there was one person who made the most commits also the commit made by that person is almost double to the number of commits made by the person who made the second highest number of commits, this goes on to show that in all the teams there was one person who did majority of the coding or at least committed a major portion of the code or was most active in updating papers, materials and code on the repository.
+Here out of the three teams only team 1 had commits from all the members and team2 and team3 had one and two members respectively who did not make any commits. This goes on to show their lack of participation in the project. Also, in all the three teams it was observed that there was one person who made the most commits also the commit made by that person is almost double to the number of commits made by the person who made the second highest number of commits, this goes on to show that in all the teams there was one person who did majority of the coding or at least committed a major portion of the code or was most active in updating papers, materials and code on the repository.
 
 \section{Bad Smells Detector}
+The features related to bad smells and the number of bad smells of the three teams are summarized in Table I. In this section, we will discuss what kind of bad smells these features reflect.
+
+\begin{table}[!htb]\centering
+ \begin{tabular}{|c|c|c|c|c|}
+ \hline
+ id &bad smell features  & team1 & team2 & team 3\\
+ \hline
+ 1&imbalanced issues assigned to member& 0 & 1 & 1\\
+ \hline
+ 2&imbalanced comments of each user  & 0 & 1 & 0\\
+ \hline
+ 3&imbalanced commits of each user & 1 & 1 & 1\\
+ \hline
+ 4&long issue($>$ 20 days)  & 1 & 0 & 0\\
+ \hline
+ 5&short issue($<$ 1 hour)  & 0 & 1 & 0\\
+ \hline
+ 6&lack of comments on issues & 0 & 1 & 0\\
+ \hline
+ 7&issue close after due   & 1 & 0 & 0\\
+ \hline
+ 8&milestone time anomaly & 0 & 0 & 1\\
+ \hline
+ 9&total number of bad smells & 3 & 5 & 3\\
+ \hline
+ \end{tabular}
+ \label{TBfeature}
+ \caption{Bad smells of each team}
+\end{table} 
+
+\subsection{Planning}
+Features 4, 5, 7, and 8 partially reflect improper planning of a project. Because of improper planning, there will be large percentage of short tasks or long tasks in a project. Compare to the total class(16.8\% long issues, 32\% short issues), team 1 has 20\% long issues, team 3 has 59\% short issues. Short issues can reveal instant task that are not in plan. Long issues and number of issue close after due may reflect difficult tasks which are not well planed. 
+The estimation of milestone is an important part of planning. Milestone time line tells the architecture of each project. For team 1 and team 2, they have different patterns of milestone time line. Team 1's milestone time line increases step by step, the development model they use may be Spiral or Agile. Team 2's milestone time line is flat, the development model looks like waterfall. This team makes all plans in the very beginning and seldom changes them. As for team 3, most of their milestones are zombie milestones. This team shows poor planning according to GitHub data.
+
+\subsection{Communication}
+Communication between developers can make the development smoothly. Features 2, 3, and 6 partially reflect poor communication. Team 2 has very few communications on GitHub and most of comments are from 2 members. Team 1 and team 3 show good communications between members.
+
+
+\subsection{Work division}
+Features 1, and 3 result from imbalanced work division. A good development architecture can well partition works and assign works to each member properly. A good number of works were assigned to each user in team 1. Team 2 and team 3 have very imbalanced work assignment. All of the three teams show imbalanced commit numbers and commit lines.
+
+\subsection{Document}
+Features 5, and 6 are related to bad behavior of documentation. One good behavior of documentation is documenting issues without delay. A short issue may be added after a task is done. The percentage of short issues(less than 1 hour) of team 1 and team 3 is far low then the class. They show good documentation habits. While team 2 has more than half of issues last not more than 1 hour Another good behavior is giving plenty of illustration in document.
 
 \section{Early Warning}
+According to the previous analysis, we find that issue duration may have effects on delay of an issue. The issue duration distribution(Fig. \ref{issue_duration_total}) and the relationship between issue's duration and the number of comments on issue(Fig. \ref{comments_duration_all}) indicate that regular issues in this kind of projects have upper bound of 20-30 days. Most of issues having duration exceed this bound are more likely delayed and have little comments on them. That may be a signal of inactive issues or difficult tasks. 
+
+Fig \ref{duration_late} and Fig \ref{start_late} reveal the effects of issue duration and issue start time on issue delay. Fig \ref{duration_late} gives a linear regression of the two features. The longer issues last, the more likely issues will exceed their due. Most of issues duration shorter than 20 days will close before or near their due. The majority of Issues' duration longer than 30 days close after dues. In development, if there are issues last longer than 20 days, developers should pay attention to them. If issue last longer than 30 days, developers should discuss about roadblocks in these issues that are not possible to overcome. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{../AprilProject/pic/predict_features/late_issue_vs_issue_duration.png}
+    \caption{Issue duration and issue overdue}
+    \label{duration_late}
+\end{figure}
+
+In Fig \ref{start_late}, as the issue start far from the milestone due, the days exceed time limit will be uncertain. So a issue should not start early from its milestone. As a result, it can prevent long last issues. Moreover, the project is better organized because uncertainties are reduced. Points at the left top of Fig \ref{start_late} are outliers, maybe represent inactive issues.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{../AprilProject/pic/predict_features/late_issue_vs_issue_startfrom_milestone.png}
+    \caption{Issue start date and issue overdue}
+    \label{start_late}
+\end{figure}
+
 
 \end{document}
